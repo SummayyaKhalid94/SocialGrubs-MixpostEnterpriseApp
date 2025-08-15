@@ -1,0 +1,52 @@
+import {nextTick} from 'vue'
+
+// Preload all JSON language files under resources/lang-json
+const languageFiles = import.meta.glob('/resources/lang-json/mixpost-pro-team/*.json');
+
+const Trans = {
+    get locale() {
+        return document.documentElement.lang;
+    },
+    get defaultLocale() {
+        return document.querySelector('meta[name="default_locale"]').getAttribute('content');
+    },
+    get direction() {
+        return document.querySelector('html').getAttribute('dir');
+    },
+    async bootstrap(i18n) {
+        i18n.fallbackLocale.value = Trans.defaultLocale;
+
+        const defaultMessages = await Trans.loadLanguageFile(Trans.defaultLocale);
+        i18n.setLocaleMessage(Trans.defaultLocale, defaultMessages.default);
+
+        if (Trans.locale !== Trans.defaultLocale) {
+            const messages = await Trans.loadLanguageFile(Trans.locale);
+            i18n.setLocaleMessage(Trans.locale, messages.default);
+        }
+
+        await Trans.changeLocale(i18n, Trans.locale, Trans.direction);
+    },
+    changeLocale(i18n, locale, direction = 'ltr') {
+        return Trans.loadLanguageFile(locale).then(messages => {
+            i18n.setLocaleMessage(locale, messages.default);
+            i18n.locale.value = locale;
+
+            document.querySelector('html').setAttribute('lang', locale);
+            document.querySelector('html').setAttribute('dir', direction);
+
+            return nextTick();
+        });
+    },
+    async loadLanguageFile(locale) {
+        const path = `/resources/lang-json/mixpost-pro-team/${locale}.json`;
+        const importer = languageFiles[path];
+        if (!importer) {
+            console.error(`Language file for locale "${locale}" not found.`);
+            return {};
+        }
+        return importer();
+    }
+};
+
+export { Trans };
+

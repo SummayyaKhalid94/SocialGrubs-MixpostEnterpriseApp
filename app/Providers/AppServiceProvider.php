@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Inovector\Mixpost\Mixpost;
 use Sentry\Laravel\Integration;
+use Inertia\Inertia;
+use Inovector\Mixpost\Settings;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Inertia::share([
+        'settings' => function () {
+            return app(Settings::class)->all();
+        },
+    ]);
     }
 }

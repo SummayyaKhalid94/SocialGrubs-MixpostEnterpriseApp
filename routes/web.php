@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inovector\Mixpost\Http\Base\Controllers\Main\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
