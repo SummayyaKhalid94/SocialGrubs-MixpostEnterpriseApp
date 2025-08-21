@@ -17,10 +17,10 @@ const props = defineProps({
 })
 </script>
 <template>
-    <Head :title="$t('finance.view_receipt')"/>
+    <Head :title="$t('e-finance.view_receipt')"/>
 
     <div class="w-full mx-auto row-py">
-        <PageHeader :title="$t('finance.view_receipt')">
+        <PageHeader :title="$t('e-finance.view_receipt')">
             <template #description>
                 {{ receipt.invoice_number }}
             </template>
@@ -46,7 +46,7 @@ const props = defineProps({
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{$t('finance.invoice_number') }}
+                            {{$t('e-finance.invoice_number') }}
                         </template>
 
                         {{ receipt.invoice_number }}
@@ -54,7 +54,7 @@ const props = defineProps({
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('finance.transaction_id') }}
+                            {{ $t('e-finance.transaction_id') }}
                         </template>
 
                         {{ receipt.transaction_id }}
@@ -62,7 +62,7 @@ const props = defineProps({
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('finance.amount') }}
+                            {{ $t('e-finance.amount') }}
                         </template>
 
                         {{ receipt.amount }} {{ receipt.currency }}
@@ -70,7 +70,7 @@ const props = defineProps({
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('finance.tax') }}
+                            {{ $t('e-finance.tax') }}
                         </template>
 
                         {{ receipt.tax }} {{ receipt.currency }}
@@ -86,7 +86,7 @@ const props = defineProps({
 
                     <HorizontalGroup class="mt-md">
                         <template #title>
-                            {{ $t('finance.billing_date') }}
+                            {{ $t('e-finance.billing_date') }}
                         </template>
 
                         {{ receipt.paid_at }}

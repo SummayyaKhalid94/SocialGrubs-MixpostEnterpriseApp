@@ -96,7 +96,7 @@ const updateRole = () => {
                 formRole.reset();
                 closeModalRole();
 
-                notify('success', $t('team.role_updated'))
+                notify('success', $t('e-team.role_updated'))
             }
         }
     );
@@ -115,8 +115,8 @@ const updateRole = () => {
                     <TableRow>
                         <TableCell component="th" scope="col"></TableCell>
                         <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('team.role') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('team.can_approve') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-team.role') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-team.can_approve') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('e-general.joined_at') }}</TableCell>
                         <TableCell component="th" scope="col"/>
                     </TableRow>
@@ -170,7 +170,7 @@ const updateRole = () => {
                                         <template #content>
                                             <DropdownItem @click="openModalRole(workspace)" as="button">
                                                 <PencilSquare class="mr-xs"/>
-                                                {{ $t('user.edit_role') }}
+                                                {{ $t('e-user.edit_role') }}
                                             </DropdownItem>
 
                                             <DropdownItem @click="detachWorkspace(workspace)" as="button">

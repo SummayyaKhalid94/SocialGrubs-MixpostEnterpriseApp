@@ -43,7 +43,7 @@ const routePrefix = inject('routePrefix');
                     <template #icon>
                         <UsersIcon/>
                     </template>
-                    {{ $t('user.users') }}
+                    {{ $t('e-user.users') }}
                 </MenuItem>
             </MenuGroupBody>
             <MenuDelimiter/>

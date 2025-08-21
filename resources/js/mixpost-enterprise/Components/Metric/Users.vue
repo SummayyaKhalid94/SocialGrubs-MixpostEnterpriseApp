@@ -28,7 +28,7 @@ onMounted(update)
 
 <template>
     <Panel>
-        <template #title>{{ $t('user.users') }}</template>
+        <template #title>{{ $t('e-user.users') }}</template>
 
         <template #action>
             <Select v-model="params.days" @change="update">
@@ -36,6 +36,6 @@ onMounted(update)
             </Select>
         </template>
 
-        <ChartTrend :label="$t('user.users')" :labels="result.labels" :aggregates="result.aggregates"/>
+        <ChartTrend :label="$t('e-user.users')" :labels="result.labels" :aggregates="result.aggregates"/>
     </Panel>
 </template>

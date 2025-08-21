@@ -33,7 +33,7 @@ const routePrefix = inject('routePrefix');
                     <template #head>
                         <TableRow>
                             <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('finance.price') }}
+                            <TableCell component="th" scope="col">{{ $t('e-finance.price') }}
                                 ({{ $page.props.currency }})
                             </TableCell>
                             <TableCell component="th" scope="col">{{ $t('plan.status') }}</TableCell>

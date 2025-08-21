@@ -29,7 +29,7 @@ class Util extends CoreUtil
 
     public static function currencies(): Collection
     {
-        $jsonData = file_get_contents(__DIR__ . '../../data/currencies.json');
+        $jsonData = file_get_contents(__DIR__ . '/data/currencies.json');
 
         return collect(json_decode($jsonData, true))->values();
     }

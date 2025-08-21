@@ -82,8 +82,8 @@ watch(() => cloneDeep(filter.value), throttle(() => {
 
 const deleteUsers = () => {
     confirmation()
-        .title($t('user.delete_users'))
-        .description($t('user.confirm_delete_users'))
+        .title($t('e-user.delete_users'))
+        .description($t('e-user.confirm_delete_users'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -95,7 +95,7 @@ const deleteUsers = () => {
                 preserveScroll: true,
                 onSuccess() {
                     deselectAllRecords();
-                    notify('success', $t('user.selected_users_deleted'))
+                    notify('success', $t('e-user.selected_users_deleted'))
                 },
                 onFinish() {
                     dialog.reset();
@@ -106,11 +106,11 @@ const deleteUsers = () => {
 }
 </script>
 <template>
-    <Head :title="$t('user.users')"/>
+    <Head :title="$t('e-user.users')"/>
 
     <div class="w-full mx-auto row-py">
-        <PageHeader :title="$t('user.users')">
-            <template #description>{{ $t('user.manage_users') }}</template>
+        <PageHeader :title="$t('e-user.users')">
+            <template #description>{{ $t('e-user.manage_users') }}</template>
         </PageHeader>
 
         <div class="mt-lg row-px w-full">
@@ -122,7 +122,7 @@ const deleteUsers = () => {
 
             <Flex class="justify-between">
                 <Link :href="route(`${routePrefix}.users.create`)" class="mb-xs sm:mb-0">
-                    <PrimaryButton>{{ $t('user.create_user') }}</PrimaryButton>
+                    <PrimaryButton>{{ $t('e-user.create_user') }}</PrimaryButton>
                 </Link>
 
                 <Filters v-model="filter"/>

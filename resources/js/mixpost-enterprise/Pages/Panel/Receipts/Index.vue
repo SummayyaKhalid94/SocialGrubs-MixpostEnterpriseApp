@@ -82,8 +82,8 @@ watch(() => cloneDeep(filter.value), throttle(() => {
 
 const deleteReceipts = () => {
     confirmation()
-        .title($t('finance.delete_receipts'))
-        .description($t('finance.confirm_delete_receipts'))
+        .title($t('e-finance.delete_receipts'))
+        .description($t('e-finance.confirm_delete_receipts'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -95,7 +95,7 @@ const deleteReceipts = () => {
                 preserveScroll: true,
                 onSuccess() {
                     deselectAllRecords();
-                    notify('success', $t('finance.selected_receipts_deleted'))
+                    notify('success', $t('e-finance.selected_receipts_deleted'))
                 },
                 onFinish() {
                     dialog.reset();
@@ -110,7 +110,7 @@ const deleteReceipts = () => {
 
     <div class="w-full mx-auto row-py">
         <PageHeader :title="$t('sidebar.receipts')">
-            <template #description>{{ $t('finance.manage_receipts') }}</template>
+            <template #description>{{ $t('e-finance.manage_receipts') }}</template>
         </PageHeader>
 
         <div class="mt-lg row-px w-full">
@@ -122,7 +122,7 @@ const deleteReceipts = () => {
 
             <Flex class="justify-between">
                 <Link :href="route(`${routePrefix}.receipts.create`)" class="mb-xs sm:mb-0">
-                    <PrimaryButton>{{ $t('finance.create_receipt') }}</PrimaryButton>
+                    <PrimaryButton>{{ $t('e-finance.create_receipt') }}</PrimaryButton>
                 </Link>
 
                 <Filters v-model="filter"/>
@@ -136,12 +136,12 @@ const deleteReceipts = () => {
                                 <Checkbox v-model:checked="toggleSelectRecordsOnPage"
                                           :disabled="!receipts.meta.total"/>
                             </TableCell>
-                            <TableCell component="th" scope="col">{{ $t('finance.invoice_number') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-finance.invoice_number') }}</TableCell>
                             <TableCell component="th" scope="col">{{ $t('e-workspace.workspace') }}</TableCell>
-                            <TableCell component="th" scope="col"> {{ $t('finance.amount') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('finance.tax') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('finance.currency') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('finance.billing_date') }}</TableCell>
+                            <TableCell component="th" scope="col"> {{ $t('e-finance.amount') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-finance.tax') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-finance.currency') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-finance.billing_date') }}</TableCell>
                             <TableCell component="th" scope="col"/>
                         </TableRow>
                     </template>

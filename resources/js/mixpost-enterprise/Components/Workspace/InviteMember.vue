@@ -37,7 +37,7 @@ const sendInvite = () => {
                 close();
                 form.reset();
 
-                notify('success', $t('team.member_invited'))
+                notify('success', $t('e-team.member_invited'))
             }
         }
     );
@@ -56,7 +56,7 @@ const close = () => {
 <template>
     <SecondaryButton @click="open" size="sm">
         <Plus class="mr-xs"/>
-        {{ $t('team.invite_member') }}
+        {{ $t('e-team.invite_member') }}
     </SecondaryButton>
 
     <DialogModal :show="modal"
@@ -65,7 +65,7 @@ const close = () => {
                  :closeable="true"
                  @close="close">
         <template #header>
-            {{ $t('team.invite_member') }}
+            {{ $t('e-team.invite_member') }}
         </template>
 
         <template #body>
@@ -92,7 +92,7 @@ const close = () => {
             <PrimaryButton @click="sendInvite"
                            :disabled="form.processing"
                            :isLoading="form.processing">
-                {{ $t('team.invite') }}
+                {{ $t('e-team.invite') }}
             </PrimaryButton>
         </template>
     </DialogModal>

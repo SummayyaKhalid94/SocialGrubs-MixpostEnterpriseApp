@@ -35,8 +35,8 @@ const confirmationDeletion = ref(false);
 
 const deleteReceipt = () => {
     confirmation()
-        .title($t('finance.delete_receipt'))
-        .description($t('finance.confirm_delete_receipt'))
+        .title($t('e-finance.delete_receipt'))
+        .description($t('e-finance.confirm_delete_receipt'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);

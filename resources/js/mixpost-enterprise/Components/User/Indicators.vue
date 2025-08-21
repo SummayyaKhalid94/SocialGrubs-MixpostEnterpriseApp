@@ -19,7 +19,7 @@ defineProps({
         <template v-if="user.is_admin">
             <Badge variant="warning"
                    class="h-6"
-                   v-tooltip="$t('user.system_admin')">S
+                   v-tooltip="$t('e-user.system_admin')">S
             </Badge>
         </template>
     </Flex>

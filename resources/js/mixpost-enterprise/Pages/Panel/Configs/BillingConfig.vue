@@ -54,7 +54,7 @@ const save = () => {
                 <template #description>{{ $t('panel.billing_settings_subscriptions') }}</template>
 
                 <HorizontalGroup>
-                    <template #title>{{ $t('finance.currency') }}</template>
+                    <template #title>{{ $t('e-finance.currency') }}</template>
 
                     <v-select
                         v-model="form.currency"
@@ -104,8 +104,8 @@ const save = () => {
                 <SectionBorder/>
 
                 <HorizontalGroup>
-                    <template #title>{{ $t('finance.prorate') }}</template>
-                    <template #description>{{ $t('finance.prorate_charges') }}</template>
+                    <template #title>{{ $t('e-finance.prorate') }}</template>
+                    <template #description>{{ $t('e-finance.prorate_charges') }}</template>
                     <Flex>
                         <label>
                             <Radio v-model:checked="form.prorate" :value="true"/>
@@ -120,8 +120,8 @@ const save = () => {
                 </HorizontalGroup>
 
                 <HorizontalGroup class="mt-lg">
-                    <template #title>{{ $t('finance.swap_invoice') }}</template>
-                    <template #description>{{ $t('finance.swap_plans_invoice_user') }}
+                    <template #title>{{ $t('e-finance.swap_invoice') }}</template>
+                    <template #description>{{ $t('e-finance.swap_plans_invoice_user') }}
                     </template>
                     <Flex>
                         <label>
@@ -139,8 +139,8 @@ const save = () => {
                 <SectionBorder/>
 
                 <HorizontalGroup>
-                    <template #title>{{ $t('finance.receipt_title') }}</template>
-                    <Input type="text" v-model="form.receipt_title" :placeholder="$t('finance.receipt')"/>
+                    <template #title>{{ $t('e-finance.receipt_title') }}</template>
+                    <Input type="text" v-model="form.receipt_title" :placeholder="$t('e-finance.receipt')"/>
                 </HorizontalGroup>
 
                 <HorizontalGroup class="mt-lg">

@@ -49,7 +49,7 @@ const attach = () => {
                 close();
                 formAttach.reset();
 
-                notify('success', $t('user.user_attached'))
+                notify('success', $t('e-user.user_attached'))
             }
         }
     );
@@ -81,7 +81,7 @@ const close = () => {
                  :closeable="true"
                  @close="close">
         <template #header>
-            {{ $t('user.attach_user') }}
+            {{ $t('e-user.attach_user') }}
         </template>
 
         <template #body>

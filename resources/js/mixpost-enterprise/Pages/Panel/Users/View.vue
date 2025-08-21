@@ -28,8 +28,8 @@ const {notify} = useNotifications();
 
 const deleteUser = () => {
     confirmation()
-        .title($t('user.delete_user'))
-        .description($t('user.confirm_delete_user'))
+        .title($t('e-user.delete_user'))
+        .description($t('e-user.confirm_delete_user'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -37,7 +37,7 @@ const deleteUser = () => {
             router.delete(route(`${routePrefix}.users.delete`, {user: props.user.id}), {
                 onSuccess(response) {
                     if (!response.props.flash.error) {
-                        notify('success', $t('user.user_deleted'));
+                        notify('success', $t('e-user.user_deleted'));
                     }
                 },
                 onFinish() {
@@ -50,10 +50,10 @@ const deleteUser = () => {
 }
 </script>
 <template>
-    <Head :title="$t('user.view_user')"/>
+    <Head :title="$t('e-user.view_user')"/>
 
     <div class="w-full mx-auto row-py">
-        <PageHeader :title="$t('user.view_user')">
+        <PageHeader :title="$t('e-user.view_user')">
             <template #description>
                 {{ user.name }}
             </template>
@@ -63,7 +63,7 @@ const deleteUser = () => {
 
         <div class="row-px">
             <Panel>
-                <template #title>{{$t('user.user_details')}}</template>
+                <template #title>{{$t('e-user.user_details')}}</template>
 
                 <div class="form-field">
                     <Indicators :user="user" conditionalClass="mb-lg"/>
@@ -95,7 +95,7 @@ const deleteUser = () => {
                     <template v-if="email_verification">
                         <HorizontalGroup class="mt-md">
                             <template #title>
-                                {{ $t('user.email_verified_at') }}
+                                {{ $t('e-user.email_verified_at') }}
                             </template>
 
                             {{ user.email_verified_at ? user.email_verified_at : '-' }}

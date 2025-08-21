@@ -32,8 +32,8 @@ const confirmationDeletion = ref(false);
 
 const deleteUser = () => {
     confirmation()
-        .title($t('user.delete_user'))
-        .description($t('user.confirm_delete_user'))
+        .title($t('e-user.delete_user'))
+        .description($t('e-user.confirm_delete_user'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);

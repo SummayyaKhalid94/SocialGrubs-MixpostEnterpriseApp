@@ -246,12 +246,12 @@ const removeGenericSubscription = () => {
                 <Flex col>
                     <label>
                         <Checkbox v-model:checked="formChangePlan.prorate"/>
-                        {{ $t('finance.prorate') }}
+                        {{ $t('e-finance.prorate') }}
                     </label>
 
                     <label>
                         <Checkbox v-model:checked="formChangePlan.billing_immediately"/>
-                        {{ $t('finance.bill_immediately') }}
+                        {{ $t('e-finance.bill_immediately') }}
                     </label>
                 </Flex>
             </div>

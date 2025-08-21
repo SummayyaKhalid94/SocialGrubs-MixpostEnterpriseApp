@@ -34,8 +34,8 @@ const {activeWorkspaceId} = useWorkspace();
                 <template #head>
                     <TableRow>
                         <TableCell component="th" scope="col" class="w-80"></TableCell>
-                        <TableCell component="th" scope="col">{{ $t('finance.billing_date') }}</TableCell>
-                        <TableCell component="th" scope="col"> {{ $t('finance.amount') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-finance.billing_date') }}</TableCell>
+                        <TableCell component="th" scope="col"> {{ $t('e-finance.amount') }}</TableCell>
                         <TableCell component="th" scope="col"/>
                     </TableRow>
                 </template>

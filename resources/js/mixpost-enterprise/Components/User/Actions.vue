@@ -43,8 +43,8 @@ const {user: authUser} = useAuth();
 
 const destroy = () => {
     confirmation()
-        .title($t('user.delete_user'))
-        .description($t('user.confirm_delete_user'))
+        .title($t('e-user.delete_user'))
+        .description($t('e-user.confirm_delete_user'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -68,7 +68,7 @@ const destroy = () => {
                   as="button"
                   type="button">
                 <SecondaryButton>
-                    {{ $t('user.impersonate') }}
+                    {{ $t('e-user.impersonate') }}
                 </SecondaryButton>
             </Link>
         </template>

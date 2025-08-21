@@ -16,8 +16,8 @@ const update = (val) => {
                 <Radio v-bind:checked="modelValue" @update:checked="update" value="admin"/>
 
                 <span class="flex flex-col ml-xs rtl:ml-0 rtl:mr-xs">
-                    <span>{{ $t('team.admin') }}</span>
-                    <span class="text-gray-500"> {{ $t('team.full_edit') }}</span>
+                    <span>{{ $t('e-team.admin') }}</span>
+                    <span class="text-gray-500"> {{ $t('e-team.full_edit') }}</span>
                 </span>
             </label>
         </div>
@@ -27,8 +27,8 @@ const update = (val) => {
                 <Radio v-bind:checked="modelValue" @update:checked="update" value="member"/>
 
                 <span class="flex flex-col ml-xs rtl:ml-0 rtl:mr-xs">
-                    <span>{{ $t('team.member') }}</span>
-                    <span class="text-gray-500">{{ $t('team.limited_edit') }}</span>
+                    <span>{{ $t('e-team.member') }}</span>
+                    <span class="text-gray-500">{{ $t('e-team.limited_edit') }}</span>
                 </span>
             </label>
         </div>
@@ -38,7 +38,7 @@ const update = (val) => {
                 <Radio v-bind:checked="modelValue" @update:checked="update" value="viewer"/>
 
                 <span class="flex flex-col ml-xs rtl:ml-0 rtl:mr-xs">
-                   <span>{{ $t('team.viewer') }}</span>
+                   <span>{{ $t('e-team.viewer') }}</span>
                    <span class="text-gray-500">{{ $t( 'team.viewer_access') }}</span>
                 </span>
             </label>

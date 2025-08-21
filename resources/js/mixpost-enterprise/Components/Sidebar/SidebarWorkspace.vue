@@ -59,7 +59,7 @@ const {activeWorkspace, isWorkspaceOwner} = useWorkspace();
                     <template #icon>
                         <Users/>
                     </template>
-                    {{ $t('team.team') }}
+                    {{ $t('e-team.team') }}
                 </MenuItem>
 
                 <MenuItem :url="route(`${routePrefix}.workspace.services.index`, {workspace: activeWorkspace.uuid})"

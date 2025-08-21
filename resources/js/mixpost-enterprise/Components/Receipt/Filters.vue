@@ -24,6 +24,6 @@ const clear = () => {
 </script>
 <template>
     <div class="flex items-center">
-        <SearchInput v-model="modelValue.invoice_number" :placeholder="$t('finance.invoice_number')"/>
+        <SearchInput v-model="modelValue.invoice_number" :placeholder="$t('e-finance.invoice_number')"/>
     </div>
 </template>

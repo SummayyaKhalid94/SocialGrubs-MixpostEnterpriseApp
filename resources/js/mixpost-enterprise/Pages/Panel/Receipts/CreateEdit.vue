@@ -40,10 +40,10 @@ const routePrefix = inject('routePrefix');
 
 const pageTitle = computed(() => {
     if (isCreate.value) {
-        return $t('finance.create_receipt');
+        return $t('e-finance.create_receipt');
     }
 
-    return $t('finance.edit_receipt');
+    return $t('e-finance.edit_receipt');
 });
 
 const {isCreate, isEdit} = usePageMode();
@@ -128,7 +128,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="invoice_number">{{$t('finance.invoice_number')}}
+                            <label for="invoice_number">{{$t('e-finance.invoice_number')}}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>
@@ -149,7 +149,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="transaction_id">{{ $t('finance.transaction_id')}}
+                            <label for="transaction_id">{{ $t('e-finance.transaction_id')}}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>
@@ -168,7 +168,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="amount">{{ $t('finance.amount') }}
+                            <label for="amount">{{ $t('e-finance.amount') }}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>
@@ -186,7 +186,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="tax">{{ $t('finance.tax') }}
+                            <label for="tax">{{ $t('e-finance.tax') }}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>
@@ -203,7 +203,7 @@ const submit = () => {
                     </HorizontalGroup>
 
                     <HorizontalGroup class="mt-lg">
-                        <template #title>{{ $t('finance.currency') }}</template>
+                        <template #title>{{ $t('e-finance.currency') }}</template>
 
                         <v-select
                             v-model="form.currency"
@@ -240,7 +240,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="paid_at">{{ $t('finance.paid_at') }}
+                            <label for="paid_at">{{ $t('e-finance.paid_at') }}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>

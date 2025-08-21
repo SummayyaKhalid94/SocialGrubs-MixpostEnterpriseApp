@@ -46,7 +46,7 @@ const save = () => {
                 <template #description>{{ $t('panel.system_settings') }}</template>
 
                 <HorizontalGroup class="mt-lg">
-                    <template #title>{{ $t('user.users_create_workspaces') }}</template>
+                    <template #title>{{ $t('e-user.users_create_workspaces') }}</template>
                     <Flex>
                         <label>
                             <Radio v-model:checked="form.multiple_workspaces" :value="true"/>

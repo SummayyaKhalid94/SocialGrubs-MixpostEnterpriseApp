@@ -25,9 +25,9 @@ const props = defineProps({
 })
 </script>
 <template>
-    <Head :title="$t('team.team')"/>
+    <Head :title="$t('e-team.team')"/>
 
-    <PageHeader :title="$t('team.team')" :with-padding-x="false"/>
+    <PageHeader :title="$t('e-team.team')" :with-padding-x="false"/>
 
     <div class="w-full">
         <WorkspaceTeamMembers :workspace="workspace"

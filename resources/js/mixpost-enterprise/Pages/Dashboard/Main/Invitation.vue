@@ -22,7 +22,7 @@ const props = defineProps({
 const {t: $t} = useI18n()
 
 const title = computed(() => {
-    return $t('team.join_workspace', {workspace: props.invitation.workspace.name});
+    return $t('e-team.join_workspace', {workspace: props.invitation.workspace.name});
 })
 
 const routePrefix = inject('routePrefix');
@@ -62,10 +62,10 @@ const accept = () => {
         </PageHeader>
 
         <Panel>
-            <template #title>{{ $t('team.join_workspace', {workspace: invitation.workspace.name}) }}</template>
+            <template #title>{{ $t('e-team.join_workspace', {workspace: invitation.workspace.name}) }}</template>
             <template #description>
                 {{
-                    $t('team.join_workspace_desc', {
+                    $t('e-team.join_workspace_desc', {
                         user: invitation.author.name,
                         workspace: invitation.workspace.name
                     })

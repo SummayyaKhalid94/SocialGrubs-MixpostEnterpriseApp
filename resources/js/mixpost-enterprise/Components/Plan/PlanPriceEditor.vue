@@ -20,7 +20,7 @@ const items = ['monthly', 'yearly']
 </script>
 <template>
     <Panel>
-        <template #title> {{ $t('finance.price_info') }}</template>
+        <template #title> {{ $t('e-finance.price_info') }}</template>
 
         <template v-for="item in items">
             <OptionGroup>
@@ -28,7 +28,7 @@ const items = ['monthly', 'yearly']
                 <div class="flex items-center gap-2xl mb-lg last:mb-0">
                     <HorizontalGroup>
                         <template #title>
-                            <label :for="`price-${item}`">{{ $t('finance.amount') }}
+                            <label :for="`price-${item}`">{{ $t('e-finance.amount') }}
                                 ({{ $page.props.currency }})</label>
                         </template>
 

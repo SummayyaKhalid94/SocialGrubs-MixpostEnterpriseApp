@@ -73,8 +73,8 @@ const closeModalRole = () => {
 
 const detachUser = (user) => {
     confirmation()
-        .title($t('user.detach_user'))
-        .description($t('user.detach_user_desc', {user: user.name, workspace: props.workspace.name }))
+        .title($t('e-user.detach_user'))
+        .description($t('e-user.detach_user_desc', {user: user.name, workspace: props.workspace.name }))
         .destructive()
         .btnConfirmName('Remove')
         .onConfirm((dialog) => {
@@ -87,7 +87,7 @@ const detachUser = (user) => {
                     preserveScroll: true,
                     onSuccess() {
                         dialog.reset();
-                        notify('success', $t('user.user_detached'))
+                        notify('success', $t('e-user.user_detached'))
                     },
                     onFinish() {
                         dialog.isLoading(false);
@@ -108,7 +108,7 @@ const updateUserRole = () => {
                 formUserRole.reset();
                 closeModalRole();
 
-                notify('success', $t('team.role_updated'))
+                notify('success', $t('e-team.role_updated'))
             }
         }
     );
@@ -116,8 +116,8 @@ const updateUserRole = () => {
 
 const cancelInvitation = (invitation) => {
     confirmation()
-        .title($t('team.cancel_invitation'))
-        .description($t('team.confirm_cancel_invitation', {'email': invitation.email}))
+        .title($t('e-team.cancel_invitation'))
+        .description($t('e-team.confirm_cancel_invitation', {'email': invitation.email}))
         .destructive()
         .btnConfirmName('Confirm')
         .onConfirm((dialog) => {
@@ -142,9 +142,9 @@ const cancelInvitation = (invitation) => {
 </script>
 <template>
     <Panel>
-        <template #title>{{ $t('team.members') }}</template>
+        <template #title>{{ $t('e-team.members') }}</template>
         <template #description>
-            {{ $t('team.invite_members') }}
+            {{ $t('e-team.invite_members') }}
         </template>
         <template #action>
             <InviteMember :workspace="workspace"/>
@@ -157,8 +157,8 @@ const cancelInvitation = (invitation) => {
                         <TableCell component="th" scope="col"></TableCell>
                         <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('e-general.email') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('team.role') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('team.can_approve') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-team.role') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-team.can_approve') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('e-general.joined_at') }}</TableCell>
                         <TableCell component="th" scope="col"/>
                     </TableRow>
@@ -175,10 +175,10 @@ const cancelInvitation = (invitation) => {
                             </TableCell>
                             <TableCell>
                                 <Flex class="justify-between">
-                                    <Badge variant="warning"> {{ $t('team.pending') }}</Badge>
+                                    <Badge variant="warning"> {{ $t('e-team.pending') }}</Badge>
                                     <PureButton v-tooltip="`
-                                         ${ $t('team.invited_by', {user: invitation.author.name}) }. \n
-                                         ${ $t('team.invited_on', {date: invitation.created_at}) }
+                                         ${ $t('e-team.invited_by', {user: invitation.author.name}) }. \n
+                                         ${ $t('e-team.invited_on', {date: invitation.created_at}) }
                                     `">
                                         <QuestionMarkCircle/>
                                     </PureButton>
@@ -266,7 +266,7 @@ const cancelInvitation = (invitation) => {
                                         <template #content>
                                             <DropdownItem @click="openModalRole(user)" as="button">
                                                 <PencilSquare class="mr-xs"/>
-                                                {{ $t('user.edit_role') }}
+                                                {{ $t('e-user.edit_role') }}
                                             </DropdownItem>
 
                                             <DropdownItem @click="detachUser(user)" as="button">

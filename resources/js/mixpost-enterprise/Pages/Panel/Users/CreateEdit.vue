@@ -37,10 +37,10 @@ const {user: authUser} = useAuth();
 
 const pageTitle = computed(() => {
     if (isCreate.value) {
-        return $t('user.create_user');
+        return $t('e-user.create_user');
     }
 
-    return $t('user.edit_user');
+    return $t('e-user.edit_user');
 });
 
 const {isCreate, isEdit} = usePageMode();
@@ -65,7 +65,7 @@ const update = () => {
         preserveScroll: true,
         preserveState: true,
         onSuccess: () => {
-            const messages = [$t('user.user_updated'), $t('user.password_changed')];
+            const messages = [$t('e-user.user_updated'), $t('e-user.password_changed')];
 
             notify('success', !form.password ? messages[0] : messages.join("\n"));
         }
@@ -136,9 +136,9 @@ const submit = () => {
                     <HorizontalGroup class="mt-md">
                         <template #title>
                             <Flex>
-                                {{ $t('user.system_admin') }}
+                                {{ $t('e-user.system_admin') }}
                                 <LabelSuffix>
-                                    <InformationCircle v-tooltip="$t('user.admin_access')"/>
+                                    <InformationCircle v-tooltip="$t('e-user.admin_access')"/>
                                 </LabelSuffix>
                             </Flex>
                         </template>
