@@ -155,11 +155,11 @@ const cancelInvitation = (invitation) => {
                 <template #head>
                     <TableRow>
                         <TableCell component="th" scope="col"></TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.name') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.email') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.email') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('team.role') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('team.can_approve') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.joined_at') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.joined_at') }}</TableCell>
                         <TableCell component="th" scope="col"/>
                     </TableRow>
                 </template>
@@ -192,10 +192,10 @@ const cancelInvitation = (invitation) => {
                             </TableCell>
                             <TableCell>
                                 <template v-if="!invitation.can_approve">
-                                    <Badge>{{ $t('general.no') }}</Badge>
+                                    <Badge>{{ $t('e-general.no') }}</Badge>
                                 </template>
                                 <template v-else>
-                                    <Badge variant="info">{{ $t('general.yes') }}</Badge>
+                                    <Badge variant="info">{{ $t('e-general.yes') }}</Badge>
                                 </template>
                             </TableCell>
                             <TableCell>-</TableCell>
@@ -213,7 +213,7 @@ const cancelInvitation = (invitation) => {
 
                                         <DropdownItem @click="cancelInvitation(invitation)" as="button">
                                             <X class="text-red-500 mr-xs"/>
-                                            {{ $t('general.cancel') }}
+                                            {{ $t('e-general.cancel') }}
                                         </DropdownItem>
                                     </template>
                                 </Dropdown>
@@ -239,7 +239,7 @@ const cancelInvitation = (invitation) => {
                             </TableCell>
                             <TableCell>
                                 <template v-if="workspace.owner_id === user.id">
-                                    <Badge variant="warning">{{ $t('general.owner') }}</Badge>
+                                    <Badge variant="warning">{{ $t('e-general.owner') }}</Badge>
                                 </template>
                                 <template v-else>
                                     <Badge>{{ $t(`team.${user.pivot.role}`) }}</Badge>
@@ -247,10 +247,10 @@ const cancelInvitation = (invitation) => {
                             </TableCell>
                             <TableCell>
                                 <template v-if="!user.pivot.can_approve">
-                                    <Badge>{{ $t('general.no') }}</Badge>
+                                    <Badge>{{ $t('e-general.no') }}</Badge>
                                 </template>
                                 <template v-else>
-                                    <Badge variant="info">{{ $t('general.yes') }}</Badge>
+                                    <Badge variant="info">{{ $t('e-general.yes') }}</Badge>
                                 </template>
                             </TableCell>
                             <TableCell>
@@ -271,7 +271,7 @@ const cancelInvitation = (invitation) => {
 
                                             <DropdownItem @click="detachUser(user)" as="button">
                                                 <Trash class="text-red-500 mr-xs"/>
-                                                {{ $t('general.remove') }}
+                                                {{ $t('e-general.remove') }}
                                             </DropdownItem>
                                         </template>
                                     </Dropdown>
@@ -309,10 +309,10 @@ const cancelInvitation = (invitation) => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="closeModalRole" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="closeModalRole" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <PrimaryButton @click="updateUserRole" :disabled="formUserRole.processing"
                            :isLoading="formUserRole.processing">
-                {{ $t('workspace.update') }}
+                {{ $t('e-workspace.update') }}
             </PrimaryButton>
         </template>
     </DialogModal>

@@ -30,12 +30,12 @@ const props = defineProps({
 
         <div class="row-px">
             <Panel>
-                <template #title>{{ $t('general.details')}}</template>
+                <template #title>{{ $t('e-general.details')}}</template>
 
                 <div class="form-field">
                     <HorizontalGroup>
                         <template #title>
-                            {{ $t('workspace.workspace') }}
+                            {{ $t('e-workspace.workspace') }}
                         </template>
 
                         <template v-if="receipt.workspace">
@@ -78,7 +78,7 @@ const props = defineProps({
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('general.description') }}
+                            {{ $t('e-general.description') }}
                         </template>
 
                         {{ receipt.description }}

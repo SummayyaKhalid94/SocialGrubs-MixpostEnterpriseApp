@@ -115,7 +115,7 @@ const deleteUsers = () => {
 
         <div class="mt-lg row-px w-full">
             <SelectableBar :count="selectedRecords.length" @close="deselectAllRecords">
-                <PureDangerButton @click="deleteUsers" v-tooltip="$t('general.delete')">
+                <PureDangerButton @click="deleteUsers" v-tooltip="$t('e-general.delete')">
                     <TrashIcon/>
                 </PureDangerButton>
             </SelectableBar>
@@ -137,9 +137,9 @@ const deleteUsers = () => {
                                           :disabled="!users.meta.total"/>
                             </TableCell>
                             <TableCell component="th" scope="col"></TableCell>
-                            <TableCell component="th" scope="col">{{ $t('general.name') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('general.email') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('general.created_at') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.email') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.created_at') }}</TableCell>
                             <TableCell component="th" scope="col"/>
                         </TableRow>
                     </template>

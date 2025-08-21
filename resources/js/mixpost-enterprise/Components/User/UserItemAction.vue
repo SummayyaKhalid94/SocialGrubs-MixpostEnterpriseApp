@@ -58,7 +58,7 @@ const deleteUser = () => {
 <template>
     <div>
         <div class="flex flex-row items-center justify-end gap-xs">
-            <PureButtonLink :href="route(`${routePrefix}.users.view`, {user: itemId})" v-tooltip="$t('general.view')">
+            <PureButtonLink :href="route(`${routePrefix}.users.view`, {user: itemId})" v-tooltip="$t('e-general.view')">
                 <Eye/>
             </PureButtonLink>
 
@@ -73,7 +73,7 @@ const deleteUser = () => {
                             <PencilSquare/>
                         </template>
 
-                        {{ $t('general.edit') }}
+                        {{ $t('e-general.edit') }}
                     </DropdownItem>
 
                     <template v-if="user.id !== itemId">
@@ -82,7 +82,7 @@ const deleteUser = () => {
                                 <Trash class="text-red-500"/>
                             </template>
 
-                            {{ $t('general.delete') }}
+                            {{ $t('e-general.delete') }}
                         </DropdownItem>
                     </template>
                 </template>

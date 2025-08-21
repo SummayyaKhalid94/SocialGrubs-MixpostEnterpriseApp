@@ -17,7 +17,7 @@ defineProps({
             <template v-if="$slots.default">
                 <slot/>
             </template>
-            <template v-if="!$slots.default"> {{ $t('general.no_results') }}</template>
+            <template v-if="!$slots.default"> {{ $t('e-general.no_results') }}</template>
         </div>
     </div>
 </template>

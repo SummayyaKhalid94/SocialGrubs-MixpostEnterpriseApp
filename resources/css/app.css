@@ -1,0 +1,26 @@
+.btn-feedback-fish {
+    position: fixed;
+    top: 50%;
+    /* center vertically */
+    right: 20px;
+    /* stick to right side */
+    transform: translateY(-50%) rotate(-90deg);
+    /* vertical text */
+    transform-origin: right center;
+
+    background: #6b46c1;
+    /* purple, customize */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+    /* nice rounded top corners */
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.btn-feedback-fish:hover {
+    background: #553c9a;
+    /* darker hover */
+}

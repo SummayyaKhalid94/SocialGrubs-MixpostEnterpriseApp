@@ -35,8 +35,8 @@ defineProps({
         <VerticalGroup class="mt-lg">
             <template #title><label for="sandbox">Sandbox</label></template>
             <Select v-model="form.options.sandbox" id="sandbox">
-                <option :value="false">{{ $t('general.no') }}</option>
-                <option :value="true">{{ $t('general.yes') }}</option>
+                <option :value="false">{{ $t('e-general.no') }}</option>
+                <option :value="true">{{ $t('e-general.yes') }}</option>
             </Select>
         </VerticalGroup>
     </div>

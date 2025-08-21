@@ -61,11 +61,11 @@ const fetch = throttle((loading, search) => {
             :filterable="false"
             :close-on-select="true"
             :disabled="disabled"
-            :placeholder="$t('workspace.search_workspace')"
+            :placeholder="$t('e-workspace.search_workspace')"
             @search="onSearch"
         >
             <template #no-options="{ search, searching, loading }">
-                {{ $t('general.list_empty') }}
+                {{ $t('e-general.list_empty') }}
             </template>
         </v-select>
     </div>

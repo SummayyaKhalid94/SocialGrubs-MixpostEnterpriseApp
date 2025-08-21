@@ -94,7 +94,7 @@ const closeModal = () => {
                                 <span class="ml-xs">
                                    <span class="mr-xs">{{ plan.name }}</span>
                                    <template v-if="!plan.enabled">
-                                       <Badge variant="error">{{ $t('general.disabled') }}</Badge>
+                                       <Badge variant="error">{{ $t('e-general.disabled') }}</Badge>
                                    </template>
                                </span>
                             </LabelGroup>
@@ -137,13 +137,13 @@ const closeModal = () => {
         <template #footer>
             <Flex>
                 <SecondaryButton @click="closeModal">
-                    {{ $t('general.cancel') }}
+                    {{ $t('e-general.cancel') }}
                 </SecondaryButton>
 
                 <template v-if="plans.length">
                     <PrimaryButton @click="add"
                                    :disabled="form.processing"
-                                   :isLoading="form.processing"> {{ $t('general.add') }}
+                                   :isLoading="form.processing"> {{ $t('e-general.add') }}
                     </PrimaryButton>
                 </template>
             </Flex>

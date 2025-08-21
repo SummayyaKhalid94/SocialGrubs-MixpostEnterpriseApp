@@ -79,11 +79,11 @@ router.on('navigate', () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="close" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="close" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <PrimaryButton @click="confirm"
                            :disabled="form.processing"
                            :isLoading="form.processing"
-                           class="mr-xs">{{ $t('general.confirm') }}
+                           class="mr-xs">{{ $t('e-general.confirm') }}
             </PrimaryButton>
         </template>
     </DialogModal>

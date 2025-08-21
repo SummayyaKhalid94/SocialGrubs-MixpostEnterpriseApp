@@ -62,8 +62,8 @@ const closeModalRole = () => {
 
 const detachWorkspace = (workspace) => {
     confirmation()
-        .title($t('workspace.detach_workspace'))
-        .description($t('workspace.detach_workspace_desc', {workspace: workspace.name, user: props.user.name}))
+        .title($t('e-workspace.detach_workspace'))
+        .description($t('e-workspace.detach_workspace_desc', {workspace: workspace.name, user: props.user.name}))
         .destructive()
         .btnConfirmName('Detach')
         .onConfirm((dialog) => {
@@ -104,7 +104,7 @@ const updateRole = () => {
 </script>
 <template>
     <Panel>
-        <template #title>{{ $t('workspace.workspaces') }}</template>
+        <template #title>{{ $t('e-workspace.workspaces') }}</template>
         <template #action>
             <AttachWorkspace :user="user" :attachedWorkspaces="user.workspaces.map((item) => item.uuid)"/>
         </template>
@@ -114,10 +114,10 @@ const updateRole = () => {
                 <template #head>
                     <TableRow>
                         <TableCell component="th" scope="col"></TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.name') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('team.role') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('team.can_approve') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.joined_at') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.joined_at') }}</TableCell>
                         <TableCell component="th" scope="col"/>
                     </TableRow>
                 </template>
@@ -136,7 +136,7 @@ const updateRole = () => {
                                 <Flex>
                                     <div>{{ workspace.name }}</div>
                                     <template v-if="user.id === workspace.owner_id">
-                                        <Badge variant="warning"> {{ $t('general.owner') }}</Badge>
+                                        <Badge variant="warning"> {{ $t('e-general.owner') }}</Badge>
                                     </template>
                                 </Flex>
                             </TableCell>
@@ -145,10 +145,10 @@ const updateRole = () => {
                             </TableCell>
                             <TableCell>
                                 <template v-if="!workspace.pivot.can_approve">
-                                    <Badge>{{ $t('general.no') }}</Badge>
+                                    <Badge>{{ $t('e-general.no') }}</Badge>
                                 </template>
                                 <template v-else>
-                                    <Badge variant="info">{{ $t('general.yes') }}</Badge>
+                                    <Badge variant="info">{{ $t('e-general.yes') }}</Badge>
                                 </template>
                             </TableCell>
                             <TableCell>
@@ -158,7 +158,7 @@ const updateRole = () => {
                                 <div class="flex justify-end">
                                     <PureButtonLink
                                         :href="route(`${routePrefix}.workspaces.view`, {workspace: workspace.uuid})"
-                                        v-tooltip="$t('general.view')" class="mr-xs">
+                                        v-tooltip="$t('e-general.view')" class="mr-xs">
                                         <Eye/>
                                     </PureButtonLink>
 
@@ -175,7 +175,7 @@ const updateRole = () => {
 
                                             <DropdownItem @click="detachWorkspace(workspace)" as="button">
                                                 <Trash class="text-red-500 mr-xs"/>
-                                                {{ $t('general.detach') }}
+                                                {{ $t('e-general.detach') }}
                                             </DropdownItem>
                                         </template>
                                     </Dropdown>
@@ -218,9 +218,9 @@ const updateRole = () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="closeModalRole" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="closeModalRole" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <PrimaryButton @click="updateRole" :disabled="formRole.processing" :isLoading="formRole.processing">
-                {{ $t('workspace.update') }}
+                {{ $t('e-workspace.update') }}
             </PrimaryButton>
         </template>
     </DialogModal>

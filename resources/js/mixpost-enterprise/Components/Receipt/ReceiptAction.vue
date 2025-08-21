@@ -68,7 +68,7 @@ const deleteReceipt = () => {
                     <template #icon>
                         <Plus/>
                     </template>
-                    {{ $t('general.create') }}
+                    {{ $t('e-general.create') }}
                 </PrimaryButton>
             </Link>
         </template>
@@ -79,7 +79,7 @@ const deleteReceipt = () => {
                     <template #icon>
                         <Eye/>
                     </template>
-                    {{ $t('general.view') }}
+                    {{ $t('e-general.view') }}
                 </SecondaryButton>
             </Link>
         </template>
@@ -90,7 +90,7 @@ const deleteReceipt = () => {
                     <template #icon>
                         <PencilSquare/>
                     </template>
-                    {{ $t('general.edit') }}
+                    {{ $t('e-general.edit') }}
                 </PrimaryButton>
             </Link>
         </template>
@@ -102,7 +102,7 @@ const deleteReceipt = () => {
                     <template #icon>
                         <ArrowDownTray/>
                     </template>
-                    {{ $t('general.download') }}
+                    {{ $t('e-general.download') }}
                 </SuccessButton>
             </a>
         </template>

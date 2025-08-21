@@ -96,10 +96,10 @@ const submit = () => {
         <div class="row-px">
             <form method="post" @submit.prevent="submit">
                 <Panel>
-                    <template #title>{{ $t('general.detail') }}</template>
+                    <template #title>{{ $t('e-general.detail') }}</template>
                     <HorizontalGroup>
                         <template #title>
-                            <label for="name">{{ $t('general.name') }}</label>
+                            <label for="name">{{ $t('e-general.name') }}</label>
                         </template>
 
                         <Input v-model="form.name"
@@ -117,7 +117,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-md">
                         <template #title>
-                            <label for="email">{{ $t('general.email') }}</label>
+                            <label for="email">{{ $t('e-general.email') }}</label>
                         </template>
 
                         <Input v-model="form.email"
@@ -147,17 +147,17 @@ const submit = () => {
                             <label>
                                 <Radio v-model:checked="form.is_admin" :value="false"
                                        :disabled="isEdit && user.id === authUser.id"/>
-                                {{ $t('general.no') }}</label>
+                                {{ $t('e-general.no') }}</label>
                             <label>
                                 <Radio v-model:checked="form.is_admin" :value="true"
                                        :disabled="isEdit && user.id === authUser.id"/>
-                                {{ $t('general.yes') }}</label>
+                                {{ $t('e-general.yes') }}</label>
                         </div>
                     </HorizontalGroup>
                 </Panel>
 
                 <Panel class="mt-lg">
-                    <template #title>{{ $t('general.password') }}</template>
+                    <template #title>{{ $t('e-general.password') }}</template>
                     <template #description>
                         <span v-if="isEdit">
                             {{ $t('panel.blank_no_change_password') }}
@@ -166,7 +166,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="password">{{ $t('general.password') }}</label>
+                            <label for="password">{{ $t('e-general.password') }}</label>
                         </template>
 
                         <Input v-model="form.password" :error="form.errors.password" type="password" id="password"
@@ -180,7 +180,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="password_confirmation">{{ $t('general.confirm_password') }}</label>
+                            <label for="password_confirmation">{{ $t('e-general.confirm_password') }}</label>
                         </template>
 
                         <Input v-model="form.password_confirmation" :error="form.errors.password_confirmation"
@@ -194,7 +194,7 @@ const submit = () => {
                 </Panel>
 
                 <PrimaryButton type="submit" :disabled="form.processing" class="mt-lg">{{
-                        isCreate ? $t('general.create') : $t('workspace.update')
+                        isCreate ? $t('e-general.create') : $t('e-workspace.update')
                     }}
                 </PrimaryButton>
             </form>

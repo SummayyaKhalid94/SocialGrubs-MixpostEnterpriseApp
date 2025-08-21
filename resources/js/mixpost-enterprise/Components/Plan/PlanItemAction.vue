@@ -48,7 +48,7 @@ const deletePlan = () => {
 <template>
     <div>
         <div class="flex flex-row items-center justify-end gap-xs">
-            <PureButtonLink :href="route(`${routePrefix}.plans.view`, {plan: itemId})" v-tooltip="$t('general.view')">
+            <PureButtonLink :href="route(`${routePrefix}.plans.view`, {plan: itemId})" v-tooltip="$t('e-general.view')">
                 <Eye/>
             </PureButtonLink>
 
@@ -62,14 +62,14 @@ const deletePlan = () => {
                         <template #icon>
                             <PencilSquare/>
                         </template>
-                        {{ $t('general.edit') }}
+                        {{ $t('e-general.edit') }}
                     </DropdownItem>
 
                     <DropdownItem @click="deletePlan" as="button">
                         <template #icon>
                             <Trash class="text-red-500"/>
                         </template>
-                        {{ $t('general.delete') }}
+                        {{ $t('e-general.delete') }}
                     </DropdownItem>
                 </template>
             </Dropdown>

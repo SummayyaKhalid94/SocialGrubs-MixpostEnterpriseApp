@@ -62,7 +62,7 @@ const deleteReceipt = () => {
     <div>
         <div class="flex flex-row items-center justify-end gap-xs">
             <PureButtonLink :href="route(`${routePrefix}.receipts.view`, {receipt: itemId})"
-                            v-tooltip="$t('general.view')">
+                            v-tooltip="$t('e-general.view')">
                 <Eye/>
             </PureButtonLink>
 
@@ -76,21 +76,21 @@ const deleteReceipt = () => {
                         <template #icon>
                             <ArrowDownTray/>
                         </template>
-                        {{ $t('general.download') }}
+                        {{ $t('e-general.download') }}
                     </DropdownItem>
 
                     <DropdownItem :href="route(`${routePrefix}.receipts.edit`, {receipt: itemId})">
                         <template #icon>
                             <PencilSquare/>
                         </template>
-                        {{ $t('general.edit') }}
+                        {{ $t('e-general.edit') }}
                     </DropdownItem>
 
                     <DropdownItem @click="deleteReceipt" as="button">
                         <template #icon>
                             <Trash class="text-red-500"/>
                         </template>
-                        {{ $t('general.delete') }}
+                        {{ $t('e-general.delete') }}
                     </DropdownItem>
                 </template>
             </Dropdown>

@@ -52,27 +52,27 @@ const save = () => {
 }
 </script>
 <template>
-    <Head :title="$t('general.settings')"/>
+    <Head :title="$t('e-general.settings')"/>
 
-    <PageHeader :title="$t('general.settings')" :with-padding-x="false"/>
+    <PageHeader :title="$t('e-general.settings')" :with-padding-x="false"/>
 
     <div class="w-ful">
         <form method="post" @submit.prevent="save">
             <Panel>
-                <template #title>{{ $t('general.details') }}</template>
-                <template #description>{{ $t('general.basic_info_desc') }}</template>
+                <template #title>{{ $t('e-general.details') }}</template>
+                <template #description>{{ $t('e-general.basic_info_desc') }}</template>
 
                 <div>
                     <HorizontalGroup>
                         <template #title>
-                            <label for="name">{{ $t('general.name') }}</label>
+                            <label for="name">{{ $t('e-general.name') }}</label>
                         </template>
 
                         <div class="w-full">
                             <Input v-model="form.name"
                                    type="text"
                                    id="name"
-                                   :placeholder="$t('workspace.workspace_name')"
+                                   :placeholder="$t('e-workspace.workspace_name')"
                                    class="w-full"
                                    autocomplete="off"
                                    required/>
@@ -82,7 +82,7 @@ const save = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('theme.color') }}
+                            {{ $t('e-theme.color') }}
                         </template>
 
                         <div @click="changeColorModal = true"
@@ -94,7 +94,7 @@ const save = () => {
 
                     <div class="flex items-center mt-lg">
                         <PrimaryButton type="submit" :disabled="form.processing">{{
-                                $t('general.save')
+                                $t('e-general.save')
                             }}
                         </PrimaryButton>
                     </div>
@@ -115,7 +115,7 @@ const save = () => {
 
     <DialogModal :show="changeColorModal" max-width="md" @close="changeColorModal = false">
         <template #header>
-            {{ $t('workspace.change_workspace_color') }}
+            {{ $t('e-workspace.change_workspace_color') }}
         </template>
         <template #body>
             <template v-if="changeColorModal" class="flex flex-col">
@@ -124,9 +124,9 @@ const save = () => {
         </template>
         <template #footer>
             <SecondaryButton @click="changeColorModal = false" class="mr-xs">
-                {{ $t('general.cancel') }}
+                {{ $t('e-general.cancel') }}
             </SecondaryButton>
-            <PrimaryButton @click="selectColor">{{ $t('general.done') }}</PrimaryButton>
+            <PrimaryButton @click="selectColor">{{ $t('e-general.done') }}</PrimaryButton>
         </template>
     </DialogModal>
 </template>

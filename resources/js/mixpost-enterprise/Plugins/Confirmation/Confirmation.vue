@@ -47,17 +47,17 @@ router.on('navigate', () => {
             <div v-html="data.description"/>
         </template>
         <template #footer>
-            <SecondaryButton @click="onCancelClick" class="mr-xs rtl:mr-0 rtl:ml-xs">{{ data.btnCancelName ? data.btnCancelName : $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="onCancelClick" class="mr-xs rtl:mr-0 rtl:ml-xs">{{ data.btnCancelName ? data.btnCancelName : $t('e-general.cancel') }}</SecondaryButton>
 
             <template v-if="data.variant === 'danger'">
                 <DangerButton @click="onConfirmClick" :disabled="data.isLoading" :isLoading="data.isLoading">
-                    {{ data.btnConfirmName ? data.btnConfirmName : $t('general.confirm') }}
+                    {{ data.btnConfirmName ? data.btnConfirmName : $t('e-general.confirm') }}
                 </DangerButton>
             </template>
 
             <template v-else>
                 <PrimaryButton @click="onConfirmClick" :disabled="data.isLoading" :isLoading="data.isLoading">
-                    {{ data.btnConfirmName ? data.btnConfirmName : $t('general.confirm') }}
+                    {{ data.btnConfirmName ? data.btnConfirmName : $t('e-general.confirm') }}
                 </PrimaryButton>
             </template>
         </template>

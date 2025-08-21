@@ -40,7 +40,7 @@ const {activeWorkspace, isWorkspaceOwner} = useWorkspace();
                         <template #icon>
                             <ArrowLeft/>
                         </template>
-                        {{ $t('general.back') }}
+                        {{ $t('e-general.back') }}
                     </SecondaryButton>
                 </Link>
             </MenuGroupBody>
@@ -51,7 +51,7 @@ const {activeWorkspace, isWorkspaceOwner} = useWorkspace();
                     <template #icon>
                         <Cog/>
                     </template>
-                    {{ $t('general.settings') }}
+                    {{ $t('e-general.settings') }}
                 </MenuItem>
 
                 <MenuItem :url="route(`${routePrefix}.workspace.members`, {workspace: activeWorkspace.uuid})"
@@ -67,7 +67,7 @@ const {activeWorkspace, isWorkspaceOwner} = useWorkspace();
                     <template #icon>
                         <ServerStack/>
                     </template>
-                    {{ $t('general.services') }}
+                    {{ $t('e-general.services') }}
                 </MenuItem>
             </MenuGroupBody>
 
@@ -79,7 +79,7 @@ const {activeWorkspace, isWorkspaceOwner} = useWorkspace();
                     <template #icon>
                         <CreditCard/>
                     </template>
-                    {{ $t('general.billing') }}
+                    {{ $t('e-general.billing') }}
                 </MenuItem>
 
                 <MenuItem :url="route(`${routePrefix}.workspace.receipts.index`, {workspace: activeWorkspace.uuid})"

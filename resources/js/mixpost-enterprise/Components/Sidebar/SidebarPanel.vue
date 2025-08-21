@@ -56,7 +56,7 @@ const routePrefix = inject('routePrefix');
                     <template #icon>
                         <GridIcon/>
                     </template>
-                    {{ $t('workspace.workspaces') }}
+                    {{ $t('e-workspace.workspaces') }}
                 </MenuItem>
                 <MenuItem :url="route(`${routePrefix}.receipts.index`)"
                           :active="$page.component === 'Panel/Receipts/Index'">
@@ -82,7 +82,7 @@ const routePrefix = inject('routePrefix');
                     <template #icon>
                         <Cog/>
                     </template>
-                    {{ $t('general.settings') }}
+                    {{ $t('e-general.settings') }}
                 </MenuItem>
             </MenuGroupBody>
         </div>

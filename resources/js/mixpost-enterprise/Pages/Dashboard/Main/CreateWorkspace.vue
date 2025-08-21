@@ -63,14 +63,14 @@ const submit = () => {
                 <div class="sm:max-w-(--container-lg)">
                     <HorizontalGroup>
                         <template #title>
-                            <label for="name">{{ $t('general.name') }}</label>
+                            <label for="name">{{ $t('e-general.name') }}</label>
                         </template>
 
                         <div class="w-full">
                             <Input v-model="form.name"
                                    type="text"
                                    id="name"
-                                   :placeholder="$t('workspace.workspace_name')"
+                                   :placeholder="$t('e-workspace.workspace_name')"
                                    class="w-full"
                                    autocomplete="off"
                                    :autofocus="true"
@@ -81,7 +81,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('theme.color') }}
+                            {{ $t('e-theme.color') }}
                         </template>
 
                         <div @click="changeColorModal = true"
@@ -92,7 +92,7 @@ const submit = () => {
                     </HorizontalGroup>
 
                     <div class="flex items-center mt-lg">
-                        <PrimaryButton type="submit" :isLoading="form.processing" :disabled="form.processing">{{ $t('general.create') }}</PrimaryButton>
+                        <PrimaryButton type="submit" :isLoading="form.processing" :disabled="form.processing">{{ $t('e-general.create') }}</PrimaryButton>
                     </div>
                 </div>
             </Panel>
@@ -101,7 +101,7 @@ const submit = () => {
 
     <DialogModal :show="changeColorModal" max-width="md" @close="changeColorModal = false">
         <template #header>
-            {{ $t('workspace.change_workspace_color') }}
+            {{ $t('e-workspace.change_workspace_color') }}
         </template>
         <template #body>
             <template v-if="changeColorModal" class="flex flex-col">
@@ -110,10 +110,10 @@ const submit = () => {
         </template>
         <template #footer>
             <SecondaryButton @click="changeColorModal = false" class="mr-xs">{{
-                    $t('general.cancel')
+                    $t('e-general.cancel')
                 }}
             </SecondaryButton>
-            <PrimaryButton @click="selectColor">{{ $t('general.done') }}</PrimaryButton>
+            <PrimaryButton @click="selectColor">{{ $t('e-general.done') }}</PrimaryButton>
         </template>
     </DialogModal>
 </template>

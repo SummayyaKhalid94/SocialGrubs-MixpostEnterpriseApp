@@ -34,15 +34,15 @@ const { t: $t } = useI18n()
 const {notify} = useNotifications();
 
 const showNotification = () => {
-    notify('success', $t('theme.example_notification'));
+    notify('success', $t('e-theme.example_notification'));
 }
 
 const confirmation = inject('confirmation');
 const showModal = () => {
     confirmation()
-        .title($t('theme.example_title_modal'))
-        .description($t('theme.example_description_modal'))
-        .btnConfirmName($t('general.confirm'))
+        .title($t('e-theme.example_title_modal'))
+        .description($t('e-theme.example_description_modal'))
+        .btnConfirmName($t('e-general.confirm'))
         .onConfirm((dialog) => {
             dialog.close();
             close();
@@ -74,7 +74,7 @@ const configDatePicker = {
 <template>
     <Flex :wrap="true">
         <PrimaryButton>Button</PrimaryButton>
-        <PrimaryButton disabled="disabled">{{$t('general.disabled')}}</PrimaryButton>
+        <PrimaryButton disabled="disabled">{{$t('e-general.disabled')}}</PrimaryButton>
         <SecondaryButton>Button</SecondaryButton>
         <DarkButtonLink href="#">Button</DarkButtonLink>
         <PureButton>
@@ -88,7 +88,7 @@ const configDatePicker = {
     <Flex class="mt-lg">
         <Tab>Tab item</Tab>
 
-        <Tab :active="true">{{ $t('theme.tab_item_active') }}</Tab>
+        <Tab :active="true">{{ $t('e-theme.tab_item_active') }}</Tab>
     </Flex>
 
     <Input type="text" placeholder="Input" class="mt-lg"/>
@@ -115,8 +115,8 @@ const configDatePicker = {
 
         <Switch v-model="switchValue">
             <span class="mr-xs">
-                <span v-if="switchValue">{{ $t('general.on') }}</span>
-                <span v-if="!switchValue">{{ $t('general.off') }}</span>
+                <span v-if="switchValue">{{ $t('e-general.on') }}</span>
+                <span v-if="!switchValue">{{ $t('e-general.off') }}</span>
             </span>
         </Switch>
     </Flex>
@@ -131,22 +131,22 @@ const configDatePicker = {
     <div class="mt-lg">
         Notification
         <WarningButton @click="showNotification">
-            {{ $t('theme.show_notification') }}
+            {{ $t('e-theme.show_notification') }}
         </WarningButton>
     </div>
 
     <div class="mt-lg">
         Modal
         <WarningButton @click="showModal">
-            {{ $t('theme.open_modal') }}
+            {{ $t('e-theme.open_modal') }}
         </WarningButton>
     </div>
 
     <Flex class="mt-lg">
         <button
             class="font-bold"
-            v-tooltip=" $t('theme.tooltip_content_here')"
-        >{{ $t('theme.show_tooltip') }}
+            v-tooltip=" $t('e-theme.tooltip_content_here')"
+        >{{ $t('e-theme.show_tooltip') }}
         </button>
     </Flex>
 

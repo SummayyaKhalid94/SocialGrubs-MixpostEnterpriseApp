@@ -24,6 +24,6 @@ const clear = () => {
 </script>
 <template>
     <div class="flex items-center">
-        <SearchInput v-model="modelValue.keyword" :placeholder="$t('general.search')"/>
+        <SearchInput v-model="modelValue.keyword" :placeholder="$t('e-general.search')"/>
     </div>
 </template>

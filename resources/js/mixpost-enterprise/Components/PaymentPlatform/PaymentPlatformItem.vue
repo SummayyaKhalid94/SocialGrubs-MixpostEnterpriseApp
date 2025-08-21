@@ -83,7 +83,7 @@ const update = () => {
         </TableCell>
 
         <TableCell :clickable="true" @click="open" align="right" class="py-md!">
-            <Badge v-if="platform.enabled" variant="success">{{ $t('general.enabled') }}</Badge>
+            <Badge v-if="platform.enabled" variant="success">{{ $t('e-general.enabled') }}</Badge>
         </TableCell>
     </TableRow>
 
@@ -100,10 +100,10 @@ const update = () => {
                     <div class="flex items-center space-x-sm">
                         <label>
                             <Radio v-model:checked="form.enabled" :value="true"/>
-                            {{ $t('general.enabled') }}</label>
+                            {{ $t('e-general.enabled') }}</label>
                         <label>
                             <Radio v-model:checked="form.enabled" :value="false"/>
-                            {{ $t('general.disabled') }}</label>
+                            {{ $t('e-general.disabled') }}</label>
                     </div>
 
                     <template #footer>
@@ -120,9 +120,9 @@ const update = () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="close" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="close" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <PrimaryButton @click="update" :disabled="form.processing" :isLoading="form.processing">{{
-                    $t('general.save')
+                    $t('e-general.save')
                 }}</PrimaryButton>
         </template>
     </DialogModal>

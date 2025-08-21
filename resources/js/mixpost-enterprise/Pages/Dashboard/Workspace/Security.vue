@@ -47,19 +47,19 @@ const destroy = () => {
     <div class="w-full">
         <Panel>
             <template #title>
-                {{ $t('workspace.delete_workspace') }}
+                {{ $t('e-workspace.delete_workspace') }}
             </template>
             <template #description>
-                {{ $t('workspace.delete_data') }}
+                {{ $t('e-workspace.delete_data') }}
             </template>
 
-            <DangerButton @click="openModal">{{ $t('workspace.delete_workspace') }}</DangerButton>
+            <DangerButton @click="openModal">{{ $t('e-workspace.delete_workspace') }}</DangerButton>
         </Panel>
     </div>
 
     <ConfirmationModal :show="modal" variant="danger" @close="closeModal">
         <template #header>
-            {{ $t('general.confirmation') }}
+            {{ $t('e-general.confirmation') }}
         </template>
         <template #body>
             <div class="mb-xs"> {{ $t('dashboard.type_name_workspace') }}</div>
@@ -83,11 +83,11 @@ const destroy = () => {
             </HorizontalGroup>
         </template>
         <template #footer>
-            <SecondaryButton @click="closeModal" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="closeModal" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <DangerButton @click="destroy"
                           :disabled="form.processing"
                           :isLoading="form.processing">
-                {{ $t('workspace.delete_workspace') }}
+                {{ $t('e-workspace.delete_workspace') }}
             </DangerButton>
         </template>
     </ConfirmationModal>

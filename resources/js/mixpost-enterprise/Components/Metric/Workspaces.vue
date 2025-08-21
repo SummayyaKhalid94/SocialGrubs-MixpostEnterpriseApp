@@ -28,7 +28,7 @@ onMounted(update);
 
 <template>
     <Panel>
-        <template #title>{{ $t('workspace.workspaces') }}</template>
+        <template #title>{{ $t('e-workspace.workspaces') }}</template>
 
         <template #action>
             <Select v-model="params.days" @change="update">
@@ -36,6 +36,6 @@ onMounted(update);
             </Select>
         </template>
 
-        <ChartTrend :label="$t('workspace.workspaces')" :labels="result.labels" :aggregates="result.aggregates"/>
+        <ChartTrend :label="$t('e-workspace.workspaces')" :labels="result.labels" :aggregates="result.aggregates"/>
     </Panel>
 </template>

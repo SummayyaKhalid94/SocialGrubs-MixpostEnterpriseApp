@@ -131,12 +131,12 @@ const submit = () => {
 
                 <div class="mt-lg row-px w-full">
                     <Panel>
-                        <template #title>{{ $t('general.details') }}</template>
+                        <template #title>{{ $t('e-general.details') }}</template>
 
                         <div class="w-full max-w-(--container-lg)">
                             <HorizontalGroup>
                                 <template #title>
-                                    <label for="name">{{ $t('general.name') }}</label>
+                                    <label for="name">{{ $t('e-general.name') }}</label>
                                 </template>
 
                                 <Input v-model="form.name"
@@ -154,14 +154,14 @@ const submit = () => {
 
                             <HorizontalGroup class="mt-lg">
                                 <template #title>
-                                    <label for="type">{{ $t('general.type') }}</label>
+                                    <label for="type">{{ $t('e-general.type') }}</label>
                                 </template>
 
                                 <Select v-model="form.type"
                                         :disabled="isEdit"
                                         :error="form.errors.type">
-                                    <option value="free">{{ $t('general.free') }}</option>
-                                    <option value="paid">{{ $t('general.paid') }}</option>
+                                    <option value="free">{{ $t('e-general.free') }}</option>
+                                    <option value="paid">{{ $t('e-general.paid') }}</option>
                                 </Select>
 
                                 <template #footer>
@@ -171,13 +171,13 @@ const submit = () => {
 
                             <HorizontalGroup class="mt-lg">
                                 <template #title>
-                                    <label for="text">{{ $t('general.status') }}</label>
+                                    <label for="text">{{ $t('e-general.status') }}</label>
                                 </template>
 
                                 <Select v-model="form.enabled"
                                         :error="form.errors.text">
-                                    <option :value=1>{{ $t('general.enabled') }}</option>
-                                    <option :value=0>{{ $t('general.disabled') }}</option>
+                                    <option :value=1>{{ $t('e-general.enabled') }}</option>
+                                    <option :value=0>{{ $t('e-general.disabled') }}</option>
                                 </Select>
 
                                 <template #footer>
@@ -187,7 +187,7 @@ const submit = () => {
 
                             <HorizontalGroup class="mt-lg">
                                 <template #title>
-                                    <label for="text">{{ $t('general.sort_order') }}</label>
+                                    <label for="text">{{ $t('e-general.sort_order') }}</label>
                                 </template>
 
                                 <Input type="number" v-model="form.sort_order"/>
@@ -241,7 +241,7 @@ const submit = () => {
         <div class="w-full flex items-center justify-end bg-stone-500 border-t border-gray-200 z-10 mt-0.5">
             <div class="w-full py-md flex items-center space-x-xs row-px">
                 <PrimaryButton @click="submit" :disabled="form.processing" :isLoading="form.processing">
-                    {{ isCreate ? $t('general.create') : $t('workspace.update') }}
+                    {{ isCreate ? $t('e-general.create') : $t('e-workspace.update') }}
                 </PrimaryButton>
             </div>
         </div>

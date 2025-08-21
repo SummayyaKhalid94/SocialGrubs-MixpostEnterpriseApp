@@ -62,7 +62,7 @@ const fetch = throttle((loading, search) => {
             :options="options"
             :filterable="false"
             :close-on-select="true"
-            :placeholder="$t('theme.type_search')"
+            :placeholder="$t('e-theme.type_search')"
             @search="onSearch"
         >
             <template #selected-option="option">
@@ -74,7 +74,7 @@ const fetch = throttle((loading, search) => {
             </template>
 
             <template #no-options="{ search, searching, loading }">
-                {{ $t('general.list_empty') }}
+                {{ $t('e-general.list_empty') }}
             </template>
         </v-select>
     </div>

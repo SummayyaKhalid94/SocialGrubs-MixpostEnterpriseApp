@@ -32,7 +32,7 @@ const routePrefix = inject('routePrefix');
                 <Table>
                     <template #head>
                         <TableRow>
-                            <TableCell component="th" scope="col">{{ $t('general.name') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
                             <TableCell component="th" scope="col">{{ $t('finance.price') }}
                                 ({{ $page.props.currency }})
                             </TableCell>
@@ -45,15 +45,15 @@ const routePrefix = inject('routePrefix');
                             <TableRow :hoverable="true">
                                 <TableCell>{{ item.name }}</TableCell>
                                 <TableCell>
-                                    <Badge v-if="item.is_free" variant="info">{{ $t('general.free') }}</Badge>
+                                    <Badge v-if="item.is_free" variant="info">{{ $t('e-general.free') }}</Badge>
                                     <div v-else>
                                         <div>Monthly: {{ item.price.monthly.amount }}</div>
                                         <div>Yearly: {{ item.price.yearly.amount }}</div>
                                     </div>
                                 </TableCell>
                                 <TableCell>
-                                    <Badge v-if="item.enabled" variant="success">{{ $t('general.enabled') }}</Badge>
-                                    <Badge v-else variant="danger">{{ $t('general.disabled') }}</Badge>
+                                    <Badge v-if="item.enabled" variant="success">{{ $t('e-general.enabled') }}</Badge>
+                                    <Badge v-else variant="danger">{{ $t('e-general.disabled') }}</Badge>
                                 </TableCell>
                                 <TableCell>
                                     <PlanItemAction :itemId="item.id"/>

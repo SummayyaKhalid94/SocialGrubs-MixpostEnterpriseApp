@@ -93,7 +93,7 @@ const cancel = () => {
         .title($t('subscription.cancel_sub'))
         .description($t('subscription.confirm_cancel_sub'))
         .destructive()
-        .btnCancelName($t('general.dismiss'))
+        .btnCancelName($t('e-general.dismiss'))
         .btnConfirmName($t('subscription.cancel_sub'))
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -146,7 +146,7 @@ const removeGenericSubscription = () => {
         .title($t('subscription.remove_sub'))
         .description($t('subscription.confirm_cancel_generic_sub'))
         .destructive()
-        .btnCancelName($t('general.dismiss'))
+        .btnCancelName($t('e-general.dismiss'))
         .btnConfirmName($t('subscription.remove_sub'))
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -261,13 +261,13 @@ const removeGenericSubscription = () => {
 
         <template #footer>
             <SecondaryButton @click="closeChangePlanModal" class="mr-xs">
-                {{ $t('general.cancel') }}
+                {{ $t('e-general.cancel') }}
             </SecondaryButton>
 
             <PrimaryButton @click="changePlan"
                            :disabled="formChangePlan.processing"
                            :isLoading="formChangePlan.processing">
-                {{ $t('general.confirm') }}
+                {{ $t('e-general.confirm') }}
             </PrimaryButton>
         </template>
     </DialogModal>
@@ -287,7 +287,7 @@ const removeGenericSubscription = () => {
 
         <template #footer>
             <SecondaryButton @click="closeInfoModal" class="mr-xs">
-                {{ $t('general.close') }}
+                {{ $t('e-general.close') }}
             </SecondaryButton>
         </template>
     </DialogModal>

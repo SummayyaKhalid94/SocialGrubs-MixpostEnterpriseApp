@@ -50,14 +50,14 @@ const {activeWorkspaceId} = useWorkspace();
                                    :href="item.receipt_url"
                                    target="_blank"
                                    class="link-primary">
-                                    {{ $t('general.download') }}
+                                    {{ $t('e-general.download') }}
                                 </a>
 
                                 <a v-else
                                    :href="route(`${routePrefix}.workspace.receipts.download`, {workspace: activeWorkspaceId, receipt: item.uuid})"
                                    target="_blank"
                                    class="link-primary">
-                                    {{ $t('general.download') }}
+                                    {{ $t('e-general.download') }}
                                 </a>
 
                             </TableCell>

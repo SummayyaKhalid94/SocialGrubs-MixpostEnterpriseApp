@@ -52,29 +52,29 @@ const clear = () => {
         <Tabs class="mr-lg rtl:mr-0 rtl:ml-lg">
             <Tab @click="changeSubscription(null)"
                  :active="!modelValue.subscription_status && !modelValue.free">
-                {{ $t('general.all') }}
+                {{ $t('e-general.all') }}
             </Tab>
 
             <Tab @click="setFreeAccess" :active="modelValue.free !== null">
-                {{ $t('general.free') }}
+                {{ $t('e-general.free') }}
             </Tab>
 
             <Tab @click="changeSubscription(STATUS_ACTIVE)" :active="modelValue.subscription_status === STATUS_ACTIVE">
-                {{ $t('general.active') }}
+                {{ $t('e-general.active') }}
             </Tab>
 
             <Tab @click="changeSubscription(STATUS_PAST_DUE)"
                  :active="modelValue.subscription_status === STATUS_PAST_DUE">Past
-                {{ $t('general.due') }}
+                {{ $t('e-general.due') }}
             </Tab>
 
             <Tab @click="changeSubscription(STATUS_CANCELED)"
                  :active="modelValue.subscription_status === STATUS_CANCELED">
-                {{ $t('general.canceled') }}
+                {{ $t('e-general.canceled') }}
             </Tab>
         </Tabs>
 
-        <SearchInput v-model="modelValue.keyword" :placeholder="$t('general.search')"/>
+        <SearchInput v-model="modelValue.keyword" :placeholder="$t('e-general.search')"/>
 
         <Dropdown width-classes="w-72" placement="bottom-end" :closeable-on-content="false">
             <template #trigger>
@@ -87,7 +87,7 @@ const clear = () => {
             </template>
 
             <template #header>
-                <PureButton @click="clear"> {{ $t('general.clear_filter') }}</PureButton>
+                <PureButton @click="clear"> {{ $t('e-general.clear_filter') }}</PureButton>
             </template>
 
             <template #content>
@@ -95,7 +95,7 @@ const clear = () => {
                     <div class="p-sm">
                         <VerticalGroup>
                             <template #title>
-                                {{ $t('general.access_status') }}
+                                {{ $t('e-general.access_status') }}
                             </template>
 
                             <Flex :col="true">
@@ -106,12 +106,12 @@ const clear = () => {
 
                                 <label>
                                     <Checkbox v-model:checked="modelValue.access_status" value="unlimited"/>
-                                    {{ $t('workspace.unlimited') }}
+                                    {{ $t('e-workspace.unlimited') }}
                                 </label>
 
                                 <label>
                                     <Checkbox v-model:checked="modelValue.access_status" value="locked"/>
-                                    {{ $t('workspace.locked') }}
+                                    {{ $t('e-workspace.locked') }}
                                 </label>
                             </Flex>
                         </VerticalGroup>

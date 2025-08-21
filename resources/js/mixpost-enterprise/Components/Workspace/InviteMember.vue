@@ -70,7 +70,7 @@ const close = () => {
 
         <template #body>
             <VerticalGroup>
-                <template #title>{{ $t('general.email') }}</template>
+                <template #title>{{ $t('e-general.email') }}</template>
                 <Input type="email"
                        v-model="form.email"
                        :error="form.errors.email !== undefined"
@@ -88,7 +88,7 @@ const close = () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="close" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="close" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <PrimaryButton @click="sendInvite"
                            :disabled="form.processing"
                            :isLoading="form.processing">

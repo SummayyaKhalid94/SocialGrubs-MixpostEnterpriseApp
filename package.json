@@ -24,6 +24,7 @@
         "vue": "^3.5.13"
     },
     "dependencies": {
+        "@feedback-fish/vue": "^1.0.1",
         "@inertiajs/vue3": "^2.0.5",
         "@jaames/iro": "^5.5.2",
         "@tiptap/core": "^2.7.2",

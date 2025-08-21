@@ -9,7 +9,7 @@ const routePrefix = inject('routePrefix');
 </script>
 <template>
     <div class="row-py w-full mx-auto">
-        <PageHeader :title="$t('general.settings')"/>
+        <PageHeader :title="$t('e-general.settings')"/>
 
         <div class="row-px">
             <Tabs class="overflow-x-auto flex-nowrap! md:flex-wrap! md:gap-sm max-w-full w-full mb-lg">
@@ -18,7 +18,7 @@ const routePrefix = inject('routePrefix');
                 </Link>
 
                 <Link :href="route(`${routePrefix}.configs.billing.view`)" class="mr-md">
-                    <Tab :active="$page.component === 'Panel/Configs/BillingConfig'">{{ $t('general.billing') }}</Tab>
+                    <Tab :active="$page.component === 'Panel/Configs/BillingConfig'">{{ $t('e-general.billing') }}</Tab>
                 </Link>
 
                 <Link :href="route(`${routePrefix}.payment-platforms.index`)" class="mr-md">

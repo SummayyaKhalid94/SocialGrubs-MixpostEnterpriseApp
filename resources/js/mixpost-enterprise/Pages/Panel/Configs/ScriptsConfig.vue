@@ -54,7 +54,7 @@ const save = () => {
                 </VerticalGroup>
 
                 <PrimaryButton :disabled="form.processing" :isLoading="form.processing" type="submit" class="mt-lg">
-                    {{ $t('general.save') }}
+                    {{ $t('e-general.save') }}
                 </PrimaryButton>
             </Panel>
         </form>

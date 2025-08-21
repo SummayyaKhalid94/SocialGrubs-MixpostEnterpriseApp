@@ -44,7 +44,7 @@ const pageTitle = computed(() => {
         return $t('dashboard.create_workspace');
     }
 
-    return $t('workspace.edit_workspace');
+    return $t('e-workspace.edit_workspace');
 });
 
 const {isCreate, isEdit} = usePageMode();
@@ -105,7 +105,7 @@ const store = () => {
 const update = () => {
     getTransformedForm().put(route(`${routePrefix}.workspaces.update`, {'workspace': props.workspace.uuid}), {
         onSuccess: () => {
-            notify('success', $t('workspace.workspace_updated'));
+            notify('success', $t('e-workspace.workspace_updated'));
         }
     })
 }
@@ -133,11 +133,11 @@ const submit = () => {
         <div class="row-px">
             <form method="post" @submit.prevent="submit">
                 <Panel>
-                    <template #title>{{ $t('general.details') }}</template>
+                    <template #title>{{ $t('e-general.details') }}</template>
 
                     <HorizontalGroup>
                         <template #title>
-                            <label for="name">{{ $t('general.name') }}
+                            <label for="name">{{ $t('e-general.name') }}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>
@@ -145,7 +145,7 @@ const submit = () => {
                         <Input v-model="form.name"
                                type="text"
                                id="name"
-                               :placeholder="$t('workspace.workspace_name')"
+                               :placeholder="$t('e-workspace.workspace_name')"
                                class="w-full"
                                autocomplete="off"
                                :autofocus="isCreate"
@@ -158,12 +158,12 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="access_status">{{ $t('general.access_status') }}</label>
+                            <label for="access_status">{{ $t('e-general.access_status') }}</label>
                         </template>
                         <Select v-model="form.access_status" id="access_status">
                             <option value="subscription"> {{ $t('subscription.requires_subscription') }}</option>
-                            <option value="unlimited">{{ $t('workspace.unlimited') }}</option>
-                            <option value="locked">{{ $t('workspace.locked') }}</option>
+                            <option value="unlimited">{{ $t('e-workspace.unlimited') }}</option>
+                            <option value="locked">{{ $t('e-workspace.locked') }}</option>
                         </Select>
                         <template #footer>
                             <Error :message="form.errors.access_status"/>
@@ -172,7 +172,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{$t('theme.color')}}
+                            {{$t('e-theme.color')}}
                         </template>
 
                         <div @click="changeColorModal = true"
@@ -184,7 +184,7 @@ const submit = () => {
                 </Panel>
 
                 <Panel class="mt-lg">
-                    <template #title>{{ $t('general.owner') }}</template>
+                    <template #title>{{ $t('e-general.owner') }}</template>
 
                    <div class="form-field">
                        <SelectUser v-model="selectedOwner"
@@ -204,7 +204,7 @@ const submit = () => {
                                class="mt-lg"
                                :disabled="form.processing"
                                :isLoading="form.processing">
-                    {{ isCreate ? $t('general.create') : $t('workspace.update') }}
+                    {{ isCreate ? $t('e-general.create') : $t('e-workspace.update') }}
                 </PrimaryButton>
             </form>
         </div>
@@ -212,7 +212,7 @@ const submit = () => {
 
     <DialogModal :show="changeColorModal" max-width="md" @close="changeColorModal = false">
         <template #header>
-            {{ $t('workspace.change_workspace_color') }}
+            {{ $t('e-workspace.change_workspace_color') }}
         </template>
         <template #body>
             <template v-if="changeColorModal" class="flex flex-col">
@@ -221,9 +221,9 @@ const submit = () => {
         </template>
         <template #footer>
             <SecondaryButton @click="changeColorModal = false" class="mr-xs rtl:mr-0 rtl:ml-xs">
-                {{ $t('general.cancel')}}
+                {{ $t('e-general.cancel')}}
             </SecondaryButton>
-            <PrimaryButton @click="selectColor">{{ $t('general.done') }}</PrimaryButton>
+            <PrimaryButton @click="selectColor">{{ $t('e-general.done') }}</PrimaryButton>
         </template>
     </DialogModal>
 </template>

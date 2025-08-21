@@ -59,7 +59,7 @@ const items = computed(() => {
 
         <div class="mt-lg row-px w-full">
             <Panel>
-                <template #title>{{ $t('general.detail') }}</template>
+                <template #title>{{ $t('e-general.detail') }}</template>
 
                 <div class="w-full form-field">
                     <div>
@@ -68,7 +68,7 @@ const items = computed(() => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('general.name') }}
+                            {{ $t('e-general.name') }}
                         </template>
 
                         {{ plan.name }}
@@ -76,16 +76,16 @@ const items = computed(() => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('general.status') }}
+                            {{ $t('e-general.status') }}
                         </template>
 
-                        <Badge v-if="plan.enabled" variant="success">{{ $t('general.enabled') }}</Badge>
-                        <Badge v-else variant="danger">{{ $t('general.disabled') }}</Badge>
+                        <Badge v-if="plan.enabled" variant="success">{{ $t('e-general.enabled') }}</Badge>
+                        <Badge v-else variant="danger">{{ $t('e-general.disabled') }}</Badge>
                     </HorizontalGroup>
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('general.sort_order') }}
+                            {{ $t('e-general.sort_order') }}
                         </template>
 
                         {{ plan.sort_order }}

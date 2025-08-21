@@ -12,6 +12,6 @@ const update = (val) => {
 <template>
     <label>
         <Checkbox v-bind:checked="modelValue" @update:checked="update" :value="false"/>
-        <span class="ml-xs">{{ $t('general.owner') }}</span>
+        <span class="ml-xs">{{ $t('e-general.owner') }}</span>
     </label>
 </template>

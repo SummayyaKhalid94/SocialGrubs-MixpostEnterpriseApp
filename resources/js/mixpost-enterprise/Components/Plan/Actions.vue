@@ -65,7 +65,7 @@ const destroy = () => {
                     <template #icon>
                         <Plus/>
                     </template>
-                    {{ $t('general.create') }}
+                    {{ $t('e-general.create') }}
                 </PrimaryButton>
             </Link>
         </template>
@@ -76,7 +76,7 @@ const destroy = () => {
                     <template #icon>
                         <Eye/>
                     </template>
-                    {{ $t('general.view') }}
+                    {{ $t('e-general.view') }}
                 </SecondaryButton>
             </Link>
         </template>
@@ -87,7 +87,7 @@ const destroy = () => {
                     <template #icon>
                         <PencilSquare/>
                     </template>
-                    {{ $t('general.edit') }}
+                    {{ $t('e-general.edit') }}
                 </PrimaryButton>
             </Link>
         </template>

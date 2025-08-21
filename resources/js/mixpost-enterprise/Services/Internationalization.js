@@ -1,6 +1,6 @@
 import { nextTick } from 'vue'
 
-const languageFiles = import.meta.glob('/resources/lang-json/mixpost-enterprise/*.json');
+const languageFiles = import.meta.glob('/resources/lang-json/mixpost-pro-team/*.json');
 
 const Trans = {
     get locale() {
@@ -39,7 +39,7 @@ const Trans = {
         })
     },
     async loadLanguageFile(locale) {
-        const path = `/resources/lang-json/mixpost-enterprise/${locale}.json`;
+        const path = `/resources/lang-json/mixpost-pro-team/${locale}.json`;
         const importer = languageFiles[path];
         if (!importer) {
             console.error(`Language file for locale "${locale}" not found.`);

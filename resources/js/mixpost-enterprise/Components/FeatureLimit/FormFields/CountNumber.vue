@@ -10,7 +10,7 @@ const emit = defineEmits(['update:modelValue']);
 <template>
     <HorizontalGroup>
         <template #title>
-            <div class="font-medium">{{ $t('general.count') }}</div>
+            <div class="font-medium">{{ $t('e-general.count') }}</div>
         </template>
 
         <div class="w-24">

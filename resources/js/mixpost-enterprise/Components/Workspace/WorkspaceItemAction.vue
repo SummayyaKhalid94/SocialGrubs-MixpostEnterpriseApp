@@ -34,8 +34,8 @@ const confirmationDeletion = ref(false);
 
 const deleteWorkspace = () => {
     confirmation()
-        .title($t('workspace.delete_workspace'))
-        .description($t('workspace.confirm_delete_workspace') + `<br><br>` + $t('workspace.data_delete'))
+        .title($t('e-workspace.delete_workspace'))
+        .description($t('e-workspace.confirm_delete_workspace') + `<br><br>` + $t('e-workspace.data_delete'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -45,7 +45,7 @@ const deleteWorkspace = () => {
             }), {
                 onSuccess() {
                     confirmationDeletion.value = false;
-                    notify('success', $t('workspace.workspace_deleted'))
+                    notify('success', $t('e-workspace.workspace_deleted'))
                     emit('onDelete')
                     emitter.emit('workspaceDelete', props.itemId);
                     dialog.reset();
@@ -63,7 +63,7 @@ const deleteWorkspace = () => {
     <div>
         <div class="flex flex-row items-center justify-end gap-xs">
             <PureButtonLink :href="route(`${routePrefix}.workspaces.view`, {workspace: itemId})"
-                            v-tooltip="$t('general.view')">
+                            v-tooltip="$t('e-general.view')">
                 <Eye/>
             </PureButtonLink>
 
@@ -78,7 +78,7 @@ const deleteWorkspace = () => {
                             <PencilSquare/>
                         </template>
 
-                        {{ $t('general.edit') }}
+                        {{ $t('e-general.edit') }}
                     </DropdownItem>
 
                     <DropdownItem @click="deleteWorkspace" as="button">
@@ -86,7 +86,7 @@ const deleteWorkspace = () => {
                             <Trash class="text-red-500"/>
                         </template>
 
-                        {{ $t('general.delete') }}
+                        {{ $t('e-general.delete') }}
                     </DropdownItem>
                 </template>
             </Dropdown>

@@ -83,8 +83,8 @@ watch(() => cloneDeep(filter.value), throttle(() => {
 
 const deleteWorkspaces = () => {
     confirmation()
-        .title($t('workspace.delete_workspaces'))
-        .description($t('workspace.confirm_delete_workspaces') + '<br><br>' + $t('workspace.data_delete'))
+        .title($t('e-workspace.delete_workspaces'))
+        .description($t('e-workspace.confirm_delete_workspaces') + '<br><br>' + $t('e-workspace.data_delete'))
         .destructive()
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -96,7 +96,7 @@ const deleteWorkspaces = () => {
                 preserveScroll: true,
                 onSuccess() {
                     deselectAllRecords();
-                    notify('success', $t('workspace.selected_workspaces_deleted'))
+                    notify('success', $t('e-workspace.selected_workspaces_deleted'))
                 },
                 onFinish() {
                     dialog.reset();
@@ -107,16 +107,16 @@ const deleteWorkspaces = () => {
 }
 </script>
 <template>
-    <Head :title="$t('workspace.workspaces')"/>
+    <Head :title="$t('e-workspace.workspaces')"/>
 
     <div class="w-full mx-auto row-py">
-        <PageHeader :title="$t('workspace.workspaces')">
-            <template #description>{{$t('workspace.manage_workspaces_subscribers')}}</template>
+        <PageHeader :title="$t('e-workspace.workspaces')">
+            <template #description>{{$t('e-workspace.manage_workspaces_subscribers')}}</template>
         </PageHeader>
 
         <div class="mt-lg row-px w-full">
             <SelectableBar :count="selectedRecords.length" @close="deselectAllRecords">
-                <PureDangerButton @click="deleteWorkspaces" v-tooltip="$t('general.delete')">
+                <PureDangerButton @click="deleteWorkspaces" v-tooltip="$t('e-general.delete')">
                     <TrashIcon/>
                 </PureDangerButton>
             </SelectableBar>
@@ -138,10 +138,10 @@ const deleteWorkspaces = () => {
                                           :disabled="!$page.props.workspaces.meta.total"/>
                             </TableCell>
                             <TableCell component="th" scope="col"></TableCell>
-                            <TableCell component="th" scope="col">{{ $t('general.name') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('general.owner') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('general.subscription') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('general.created_at') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.owner') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.subscription') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-general.created_at') }}</TableCell>
                             <TableCell component="th" scope="col"/>
                         </TableRow>
                     </template>

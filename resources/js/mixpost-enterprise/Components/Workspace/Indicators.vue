@@ -29,7 +29,7 @@ defineProps({
         <template v-if="workspace.access_status === ACCESS_STATUS_LOCKED">
             <Badge variant="error"
                    class="h-6"
-                   v-tooltip="$t('workspace.locked')">
+                   v-tooltip="$t('e-workspace.locked')">
                 <LockClosed class="w-[18px]! h-[18px]!"/>
             </Badge>
         </template>

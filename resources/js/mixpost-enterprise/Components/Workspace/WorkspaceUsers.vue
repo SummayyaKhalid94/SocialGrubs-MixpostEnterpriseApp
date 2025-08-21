@@ -67,7 +67,7 @@ const detachUser = (user) => {
         .title($t('user.detach_user'))
         .description($t('user.detach_user_desc', {user: user.name, workspace: props.workspace.name}))
         .destructive()
-        .btnConfirmName($t('general.detach'))
+        .btnConfirmName($t('e-general.detach'))
         .onConfirm((dialog) => {
             dialog.isLoading(true);
 
@@ -112,11 +112,11 @@ const updateRole = () => {
                 <template #head>
                     <TableRow>
                         <TableCell component="th" scope="col"></TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.name') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.email') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.name') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.email') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('team.role') }}</TableCell>
                         <TableCell component="th" scope="col">{{ $t('team.can_approve') }}</TableCell>
-                        <TableCell component="th" scope="col">{{ $t('general.joined_at') }}</TableCell>
+                        <TableCell component="th" scope="col">{{ $t('e-general.joined_at') }}</TableCell>
                         <TableCell component="th" scope="col"/>
                     </TableRow>
                 </template>
@@ -132,7 +132,7 @@ const updateRole = () => {
                                 <Flex>
                                     <div>{{ user.name }}</div>
                                     <template v-if="user.id === workspace.owner_id">
-                                        <Badge variant="warning"> {{ $t('general.owner') }}</Badge>
+                                        <Badge variant="warning"> {{ $t('e-general.owner') }}</Badge>
                                     </template>
                                 </Flex>
                             </TableCell>
@@ -144,10 +144,10 @@ const updateRole = () => {
                             </TableCell>
                             <TableCell>
                                 <template v-if="!user.pivot.can_approve">
-                                    <Badge>{{ $t('general.no') }}</Badge>
+                                    <Badge>{{ $t('e-general.no') }}</Badge>
                                 </template>
                                 <template v-else>
-                                    <Badge variant="info">{{ $t('general.yes') }}</Badge>
+                                    <Badge variant="info">{{ $t('e-general.yes') }}</Badge>
                                 </template>
                             </TableCell>
                             <TableCell>
@@ -157,7 +157,7 @@ const updateRole = () => {
                                 <div class="flex justify-end">
                                     <PureButtonLink
                                         :href="route(`${routePrefix}.users.view`, {user: user.id})"
-                                        v-tooltip="$t('general.view')" class="mr-xs">
+                                        v-tooltip="$t('e-general.view')" class="mr-xs">
                                         <Eye/>
                                     </PureButtonLink>
 
@@ -174,7 +174,7 @@ const updateRole = () => {
 
                                             <DropdownItem @click="detachUser(user)" as="button">
                                                 <Trash class="text-red-500 mr-xs"/>
-                                                {{ $t('general.detach') }}
+                                                {{ $t('e-general.detach') }}
                                             </DropdownItem>
                                         </template>
                                     </Dropdown>
@@ -217,9 +217,9 @@ const updateRole = () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="closeModalRole" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="closeModalRole" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <PrimaryButton @click="updateRole" :disabled="formRole.processing" :isLoading="formRole.processing">
-                {{ $t('workspace.update') }}
+                {{ $t('e-workspace.update') }}
             </PrimaryButton>
         </template>
     </DialogModal>

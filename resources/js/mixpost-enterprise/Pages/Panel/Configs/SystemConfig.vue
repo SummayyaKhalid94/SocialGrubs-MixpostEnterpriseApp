@@ -50,10 +50,10 @@ const save = () => {
                     <Flex>
                         <label>
                             <Radio v-model:checked="form.multiple_workspaces" :value="true"/>
-                            {{ $t('general.yes') }}</label>
+                            {{ $t('e-general.yes') }}</label>
                         <label>
                             <Radio v-model:checked="form.multiple_workspaces" :value="false"/>
-                            {{ $t('general.no') }}</label>
+                            {{ $t('e-general.no') }}</label>
                     </Flex>
                 </HorizontalGroup>
 
@@ -64,10 +64,10 @@ const save = () => {
                     <Flex>
                         <label>
                             <Radio v-model:checked="form.workspace_twitter_service" :value="true"/>
-                            {{ $t('general.yes') }}</label>
+                            {{ $t('e-general.yes') }}</label>
                         <label>
                             <Radio v-model:checked="form.workspace_twitter_service" :value="false"/>
-                            {{ $t('general.no') }}</label>
+                            {{ $t('e-general.no') }}</label>
                     </Flex>
                 </HorizontalGroup>
 
@@ -88,7 +88,7 @@ const save = () => {
                 </template>
 
                 <PrimaryButton :disabled="form.processing" :isLoading="form.processing" type="submit" class="mt-lg">
-                    {{ $t('general.save') }}
+                    {{ $t('e-general.save') }}
                 </PrimaryButton>
             </Panel>
         </form>

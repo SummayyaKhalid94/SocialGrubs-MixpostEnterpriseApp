@@ -110,11 +110,11 @@ const submit = () => {
         <div class="row-px">
             <form method="post" @submit.prevent="submit">
                 <Panel>
-                    <template #title>{{ $t('general.details') }}</template>
+                    <template #title>{{ $t('e-general.details') }}</template>
 
                     <HorizontalGroup>
                         <template #title>
-                            <label>{{ $t('workspace.workspace') }}
+                            <label>{{ $t('e-workspace.workspace') }}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>
@@ -223,7 +223,7 @@ const submit = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            <label for="description">{{ $t('general.description') }}
+                            <label for="description">{{ $t('e-general.description') }}
                                 <LabelSuffix danger>*</LabelSuffix>
                             </label>
                         </template>
@@ -259,7 +259,7 @@ const submit = () => {
                         <PrimaryButton type="submit"
                                        :disabled="form.processing"
                                        :isLoading="form.processing">
-                            {{ isCreate ? $t('general.create') : $t('workspace.update') }}
+                            {{ isCreate ? $t('e-general.create') : $t('e-workspace.update') }}
                         </PrimaryButton>
                     </div>
                 </Panel>

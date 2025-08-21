@@ -53,8 +53,8 @@ const isCustom = computed(() => {
             <div class="w-full md:w-3/5">
                 <form method="post" @submit.prevent="save">
                     <Panel>
-                        <template #title>{{ $t('theme.logo_favicon') }}</template>
-                        <template #description>{{ $t('theme.rebrand_company') }}</template>
+                        <template #title>{{ $t('e-theme.logo_favicon') }}</template>
+                        <template #description>{{ $t('e-theme.rebrand_company') }}</template>
 
                         <HorizontalGroup>
                             <template #title>
@@ -67,13 +67,13 @@ const isCustom = computed(() => {
 
                                      form.logo_url = e.url;
                             }" class="mr-xs">
-                                        <SecondaryButton id="logo">{{ $t('theme.upload_logo') }}
+                                        <SecondaryButton id="logo">{{ $t('e-theme.upload_logo') }}
                                         </SecondaryButton>
                                     </UploadButton>
 
                                     <template v-if="form.logo_url">
                                         <DangerButton @click="form.logo_url = ''" size="sm"
-                                                      v-tooltip="$t('theme.remove_logo')">
+                                                      v-tooltip="$t('e-theme.remove_logo')">
                                             <X/>
                                         </DangerButton>
                                     </template>
@@ -101,13 +101,13 @@ const isCustom = computed(() => {
 
                                      form.favicon_url = e.url;
                             }" class="mr-xs">
-                                        <SecondaryButton id="logo">{{ $t('theme.upload_favicon') }} (16 x 16 px)
+                                        <SecondaryButton id="logo">{{ $t('e-theme.upload_favicon') }} (16 x 16 px)
                                         </SecondaryButton>
                                     </UploadButton>
 
                                     <template v-if="form.favicon_url">
                                         <DangerButton @click="form.favicon_url = ''" size="sm"
-                                                      v-tooltip="$t('theme.remove_favicon')">
+                                                      v-tooltip="$t('e-theme.remove_favicon')">
                                             <X/>
                                         </DangerButton>
                                     </template>
@@ -135,7 +135,7 @@ const isCustom = computed(() => {
 
                                      form.favicon_chrome_small_url = e.url;
                             }" class="mr-xs">
-                                        <SecondaryButton id="logo">{{ $t('theme.upload_favicon') }} (192 x 192
+                                        <SecondaryButton id="logo">{{ $t('e-theme.upload_favicon') }} (192 x 192
                                             px)
                                             (png)
                                         </SecondaryButton>
@@ -143,7 +143,7 @@ const isCustom = computed(() => {
 
                                     <template v-if="form.favicon_chrome_small_url">
                                         <DangerButton @click="form.favicon_chrome_small_url = ''" size="sm"
-                                                      v-tooltip="$t('theme.remove_favicon')">
+                                                      v-tooltip="$t('e-theme.remove_favicon')">
                                             <X/>
                                         </DangerButton>
                                     </template>
@@ -171,7 +171,7 @@ const isCustom = computed(() => {
 
                                      form.favicon_chrome_medium_url = e.url;
                             }" class="mr-xs">
-                                        <SecondaryButton id="logo">{{ $t('theme.upload_favicon') }} (512 x 512
+                                        <SecondaryButton id="logo">{{ $t('e-theme.upload_favicon') }} (512 x 512
                                             px)
                                             (png)
                                         </SecondaryButton>
@@ -179,7 +179,7 @@ const isCustom = computed(() => {
 
                                     <template v-if="form.favicon_chrome_medium_url">
                                         <DangerButton @click="form.favicon_chrome_medium_url = ''" size="sm"
-                                                      v-tooltip="$t('theme.remove_favicon')">
+                                                      v-tooltip="$t('e-theme.remove_favicon')">
                                             <X/>
                                         </DangerButton>
                                     </template>
@@ -198,12 +198,12 @@ const isCustom = computed(() => {
                     </Panel>
 
                     <Panel class="mt-lg">
-                        <template #title>{{ $t('theme.theme_color') }}</template>
-                        <template #description>{{ $t('theme.rebrand_company') }}</template>
+                        <template #title>{{ $t('e-theme.theme_color') }}</template>
+                        <template #description>{{ $t('e-theme.rebrand_company') }}</template>
 
                         <HorizontalGroup class="mt-lg">
                             <template #title>
-                                <label>{{ $t('theme.primary_color') }}</label>
+                                <label>{{ $t('e-theme.primary_color') }}</label>
                             </template>
 
                             <Select v-model="form.app_color">
@@ -211,14 +211,14 @@ const isCustom = computed(() => {
                                         color.name
                                     }}
                                 </option>
-                                <option value="custom"> {{ $t('theme.custom') }}</option>
+                                <option value="custom"> {{ $t('e-theme.custom') }}</option>
                             </Select>
                         </HorizontalGroup>
 
                         <template v-if="isCustom">
                             <HorizontalGroup class="mt-lg">
                                 <template #title>
-                                    <label>{{ $t('theme.primary_colors') }}</label>
+                                    <label>{{ $t('e-theme.primary_colors') }}</label>
                                 </template>
 
                                 <div>
@@ -235,17 +235,17 @@ const isCustom = computed(() => {
 
                                     <div class="mt-xs">
                                         <a href="https://uicolors.app/browse/tailwind-colors" target="_blank"
-                                           class="block link">- {{ $t('theme.inspire_here') }}</a>
+                                           class="block link">- {{ $t('e-theme.inspire_here') }}</a>
                                         <a href="https://uicolors.app/create" target="_blank"
                                            class="block link">-
-                                            {{ $t('theme.generate_here') }}</a>
+                                            {{ $t('e-theme.generate_here') }}</a>
                                     </div>
                                 </div>
                             </HorizontalGroup>
 
                             <HorizontalGroup class="mt-lg">
                                 <template #title>
-                                    <label>{{ $t('theme.primary_button') }}</label>
+                                    <label>{{ $t('e-theme.primary_button') }}</label>
                                 </template>
 
                                 <TriggerColorPicker :color="form.app_custom_colors.primary_context"
@@ -259,7 +259,7 @@ const isCustom = computed(() => {
 
                         <HorizontalGroup class="mt-lg">
                             <template #title>
-                                <label> {{ $t('theme.alert_background') }}</label>
+                                <label> {{ $t('e-theme.alert_background') }}</label>
                             </template>
 
                             <TriggerColorPicker :color="form.app_custom_colors.alert"
@@ -270,7 +270,7 @@ const isCustom = computed(() => {
 
                         <HorizontalGroup class="mt-lg">
                             <template #title>
-                                <label>{{ $t('theme.alert_text') }}</label>
+                                <label>{{ $t('e-theme.alert_text') }}</label>
                             </template>
 
                             <TriggerColorPicker :color="form.app_custom_colors.alert_context"
@@ -282,7 +282,7 @@ const isCustom = computed(() => {
 
                     <div class="flex items-center mt-lg">
                         <PrimaryButton type="submit" :disabled="form.processing"
-                                       :isLoading="form.processing"> {{ $t('general.save') }}
+                                       :isLoading="form.processing"> {{ $t('e-general.save') }}
                         </PrimaryButton>
                     </div>
 
@@ -291,7 +291,7 @@ const isCustom = computed(() => {
 
             <div class="w-full md:w-2/5">
                 <Panel>
-                    <template #title>{{ $t('general.preview') }}</template>
+                    <template #title>{{ $t('e-general.preview') }}</template>
 
                     <PreviewComponents :configs="form"/>
                 </Panel>

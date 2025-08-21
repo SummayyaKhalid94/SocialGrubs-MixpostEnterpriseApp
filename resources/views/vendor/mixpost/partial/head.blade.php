@@ -6,4 +6,3 @@
 
 @vite(['resources/js/mixpost-pro-team/app.js', 'resources/css/mixpost-pro-team/app.css'])
 @routes
-@inertiaHead

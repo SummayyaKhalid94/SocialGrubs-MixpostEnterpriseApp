@@ -60,7 +60,7 @@ const close = () => {
             <Plus/>
         </template>
 
-        {{ $t('general.attach') }}
+        {{ $t('e-general.attach') }}
     </SecondaryButton>
 
     <DialogModal :show="modal"
@@ -69,7 +69,7 @@ const close = () => {
                  :closeable="true"
                  @close="close">
         <template #header>
-            {{ $t('workspace.attach_workspace') }}
+            {{ $t('e-workspace.attach_workspace') }}
         </template>
 
         <template #body>
@@ -86,9 +86,9 @@ const close = () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="close" class="mr-xs rtl:mr-0 rtl:ml-xs">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="close" class="mr-xs rtl:mr-0 rtl:ml-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
             <PrimaryButton @click="attach" :disabled="!selectedWorkspace || formAttach.processing"
-                           :isLoading="formAttach.processing"> {{ $t('general.attach') }}
+                           :isLoading="formAttach.processing"> {{ $t('e-general.attach') }}
             </PrimaryButton>
         </template>
     </DialogModal>

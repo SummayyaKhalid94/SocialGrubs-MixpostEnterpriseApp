@@ -70,7 +70,7 @@ const deleteUser = () => {
 
                     <HorizontalGroup>
                         <template #title>
-                            {{ $t('general.name') }}
+                            {{ $t('e-general.name') }}
                         </template>
 
                         {{ user.name }}
@@ -78,7 +78,7 @@ const deleteUser = () => {
 
                     <HorizontalGroup class="mt-md">
                         <template #title>
-                            {{ $t('general.email') }}
+                            {{ $t('e-general.email') }}
                         </template>
 
                         {{ user.email }}
@@ -86,7 +86,7 @@ const deleteUser = () => {
 
                     <HorizontalGroup class="mt-md">
                         <template #title>
-                            {{ $t('general.created_at') }}
+                            {{ $t('e-general.created_at') }}
                         </template>
 
                         {{ user.created_at }}

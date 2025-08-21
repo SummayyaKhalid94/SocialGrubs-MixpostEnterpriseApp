@@ -76,12 +76,12 @@ const accept = () => {
             <Flex :responsive="false">
                 <SecondaryButton @click="decline"
                                  :disabled="isLoading"
-                                 :isLoading="declineLoading">{{ $t('general.decline') }}
+                                 :isLoading="declineLoading">{{ $t('e-general.decline') }}
                 </SecondaryButton>
 
                 <PrimaryButton @click="accept"
                                :disabled="isLoading"
-                               :isLoading="acceptLoading">{{ $t('general.accept') }}
+                               :isLoading="acceptLoading">{{ $t('e-general.accept') }}
                 </PrimaryButton>
             </Flex>
         </Panel>

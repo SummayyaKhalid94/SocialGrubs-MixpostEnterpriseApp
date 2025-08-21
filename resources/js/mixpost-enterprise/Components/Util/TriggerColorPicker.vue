@@ -51,8 +51,8 @@ const done = () => {
             </template>
         </template>
         <template #footer>
-            <SecondaryButton @click="close" class="mr-xs">{{ $t('general.cancel') }}</SecondaryButton>
-            <PrimaryButton @click="done">{{ $t('general.done') }}</PrimaryButton>
+            <SecondaryButton @click="close" class="mr-xs">{{ $t('e-general.cancel') }}</SecondaryButton>
+            <PrimaryButton @click="done">{{ $t('e-general.done') }}</PrimaryButton>
         </template>
     </DialogModal>
 </template>

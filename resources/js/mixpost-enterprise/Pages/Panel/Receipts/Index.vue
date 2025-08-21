@@ -115,7 +115,7 @@ const deleteReceipts = () => {
 
         <div class="mt-lg row-px w-full">
             <SelectableBar :count="selectedRecords.length" @close="deselectAllRecords">
-                <PureDangerButton @click="deleteReceipts" v-tooltip="$t('general.delete')">
+                <PureDangerButton @click="deleteReceipts" v-tooltip="$t('e-general.delete')">
                     <TrashIcon/>
                 </PureDangerButton>
             </SelectableBar>
@@ -137,7 +137,7 @@ const deleteReceipts = () => {
                                           :disabled="!receipts.meta.total"/>
                             </TableCell>
                             <TableCell component="th" scope="col">{{ $t('finance.invoice_number') }}</TableCell>
-                            <TableCell component="th" scope="col">{{ $t('workspace.workspace') }}</TableCell>
+                            <TableCell component="th" scope="col">{{ $t('e-workspace.workspace') }}</TableCell>
                             <TableCell component="th" scope="col"> {{ $t('finance.amount') }}</TableCell>
                             <TableCell component="th" scope="col">{{ $t('finance.tax') }}</TableCell>
                             <TableCell component="th" scope="col">{{ $t('finance.currency') }}</TableCell>

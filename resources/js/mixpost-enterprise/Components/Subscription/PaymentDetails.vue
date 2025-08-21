@@ -12,7 +12,7 @@ defineProps({
 <template>
     <ListGroup v-if="payment_method.type">
         <ListItem>
-            <span class="font-bold">{{ $t('general.type') }}</span>: <span class="capitalize">
+            <span class="font-bold">{{ $t('e-general.type') }}</span>: <span class="capitalize">
             {{ payment_method.type }}</span>
         </ListItem>
 

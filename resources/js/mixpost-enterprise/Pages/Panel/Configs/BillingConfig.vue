@@ -50,7 +50,7 @@ const save = () => {
     <Settings>
         <form @submit.prevent="save">
             <Panel>
-                <template #title>{{ $t('general.billing') }}</template>
+                <template #title>{{ $t('e-general.billing') }}</template>
                 <template #description>{{ $t('panel.billing_settings_subscriptions') }}</template>
 
                 <HorizontalGroup>
@@ -91,12 +91,12 @@ const save = () => {
                     <Flex>
                         <label>
                             <Radio v-model:checked="form.generic_trial" :value="true"/>
-                            {{ $t('general.yes') }}
+                            {{ $t('e-general.yes') }}
                         </label>
 
                         <label>
                             <Radio v-model:checked="form.generic_trial" :value="false"/>
-                            {{ $t('general.no') }}
+                            {{ $t('e-general.no') }}
                         </label>
                     </Flex>
                 </HorizontalGroup>
@@ -109,12 +109,12 @@ const save = () => {
                     <Flex>
                         <label>
                             <Radio v-model:checked="form.prorate" :value="true"/>
-                            {{ $t('general.yes') }}
+                            {{ $t('e-general.yes') }}
                         </label>
 
                         <label>
                             <Radio v-model:checked="form.prorate" :value="false"/>
-                            {{ $t('general.no') }}
+                            {{ $t('e-general.no') }}
                         </label>
                     </Flex>
                 </HorizontalGroup>
@@ -126,12 +126,12 @@ const save = () => {
                     <Flex>
                         <label>
                             <Radio v-model:checked="form.bill_immediately" :value="true"/>
-                            {{ $t('general.yes') }}
+                            {{ $t('e-general.yes') }}
                         </label>
 
                         <label>
                             <Radio v-model:checked="form.bill_immediately" :value="false"/>
-                            {{ $t('general.no') }}
+                            {{ $t('e-general.no') }}
                         </label>
                     </Flex>
                 </HorizontalGroup>
@@ -157,12 +157,12 @@ const save = () => {
 
                 <HorizontalGroup class="mt-lg">
                     <template #title>{{ $t('plan.plans_page_url_title') }}</template>
-                    <Input type="text" v-model="form.plans_page_url_title" :placeholder="$t('general.learn_more')"/>
+                    <Input type="text" v-model="form.plans_page_url_title" :placeholder="$t('e-general.learn_more')"/>
                 </HorizontalGroup>
 
 
                 <PrimaryButton :disabled="form.processing" :isLoading="form.processing" type="submit" class="mt-lg">
-                    {{ $t('general.save') }}
+                    {{ $t('e-general.save') }}
                 </PrimaryButton>
             </Panel>
         </form>

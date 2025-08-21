@@ -19,14 +19,14 @@ defineProps({
              class="fixed bottom-0 mb-sm py-md px-sm flex items-center bg-alert shadow-mix text-alert-context rounded-md mt-1 z-10">
             <div class="flex w-full items-center">
                 <div class="flex items-center">
-                    <button @click="$emit('close')" v-tooltip.top="$t('general.dismiss')"
+                    <button @click="$emit('close')" v-tooltip.top="$t('e-general.dismiss')"
                             class="mr-sm hover:text-red-500 transition-colors ease-in-out duration-200">
                         <XIcon/>
                     </button>
                     <div class="text-alert-context">
                         <span class="btn-black mr-xs">{{ count }}</span>
-                        <span class="hidden sm:inline-block">{{ $t('general.items_selected') }}</span>
-                        <span class="inline-block sm:hidden">{{ $t('general.selected') }}</span>
+                        <span class="hidden sm:inline-block">{{ $t('e-general.items_selected') }}</span>
+                        <span class="inline-block sm:hidden">{{ $t('e-general.selected') }}</span>
                     </div>
                 </div>
                 <div :class="{'ml-sm rtl:ml-0 rtl:mr-sm': $slots}" class="flex items-center">

@@ -57,7 +57,7 @@ const cancelSubscription = () => {
         .title($t('subscription.cancel_sub'))
         .description($t('subscription.confirm_cancel_sub'))
         .destructive()
-        .btnCancelName($t('general.dismiss'))
+        .btnCancelName($t('e-general.dismiss'))
         .btnConfirmName($t('subscription.cancel_sub'))
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -80,7 +80,7 @@ const downgradeSubscriptionToFreePlan = () => {
     confirmation()
         .title($t('subscription.downgrade_free_plan'))
         .description($t('subscription.confirm_downgrade_free_plan') + "\n\n" + $t('subscription.features_access_lost'))
-        .btnCancelName($t('general.dismiss'))
+        .btnCancelName($t('e-general.dismiss'))
         .btnConfirmName($t('subscription.downgrade'))
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -103,7 +103,7 @@ const resumeSubscription = () => {
     confirmation()
         .title($t('subscription.resume'))
         .description($t('subscription.confirm_resume'))
-        .btnCancelName($t('general.dismiss'))
+        .btnCancelName($t('e-general.dismiss'))
         .btnConfirmName($t('subscription.resume'))
         .onConfirm((dialog) => {
             dialog.isLoading(true);
@@ -136,10 +136,10 @@ onMounted(() => {
 })
 </script>
 <template>
-    <Head :title="$t('general.billing')"/>
+    <Head :title="$t('e-general.billing')"/>
 
     <div class="w-full">
-        <PageHeader :title="$t('general.billing')" :with-padding-x="false"/>
+        <PageHeader :title="$t('e-general.billing')" :with-padding-x="false"/>
 
         <Preloader v-if="has_delay">
             {{ $t('dashboard.processing') }}
@@ -193,7 +193,7 @@ onMounted(() => {
                 <div class="mt-lg">
                     <Link :href="route(`${routePrefix}.workspace.upgrade`, {workspace: workspace.uuid})">
                         <PrimaryButton>
-                            {{ $t('general.subscribe') }}
+                            {{ $t('e-general.subscribe') }}
                         </PrimaryButton>
                     </Link>
                 </div>

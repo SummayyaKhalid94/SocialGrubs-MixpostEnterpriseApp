@@ -88,7 +88,7 @@ const close = () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="close">{{ $t('general.done') }}</SecondaryButton>
+            <SecondaryButton @click="close">{{ $t('e-general.done') }}</SecondaryButton>
         </template>
     </DialogModal>
 </template>

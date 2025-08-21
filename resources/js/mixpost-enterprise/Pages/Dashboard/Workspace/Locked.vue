@@ -14,9 +14,9 @@ const routePrefix = inject('routePrefix');
 const {activeWorkspaceId} = useWorkspace();
 </script>
 <template>
-    <Head :title="$t('workspace.locked')"/>
+    <Head :title="$t('e-workspace.locked')"/>
 
-    <PageHeader :title="$t('workspace.locked')" :with-padding-x="false"/>
+    <PageHeader :title="$t('e-workspace.locked')" :with-padding-x="false"/>
 
     <div class="w-full mx-auto">
         <Alert variant="error" :closeable="false">

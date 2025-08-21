@@ -40,8 +40,8 @@ const props = defineProps({
 
 const destroy = () => {
     confirmation()
-        .title($t('workspace.delete_workspace'))
-        .description($t('workspace.confirm_delete_workspace') + '<br><br>' + $t('workspace.data_delete'))
+        .title($t('e-workspace.delete_workspace'))
+        .description($t('e-workspace.confirm_delete_workspace') + '<br><br>' + $t('e-workspace.data_delete'))
             .destructive()
             .onConfirm((dialog) => {
                 dialog.isLoading(true);
@@ -65,7 +65,7 @@ const destroy = () => {
                     <template #icon>
                         <Plus/>
                     </template>
-                    {{ $t('general.create')}}
+                    {{ $t('e-general.create')}}
                 </PrimaryButton>
             </Link>
         </template>
@@ -76,7 +76,7 @@ const destroy = () => {
                     <template #icon>
                         <Eye/>
                     </template>
-                    {{ $t('general.view')}}
+                    {{ $t('e-general.view')}}
                 </SecondaryButton>
             </Link>
         </template>
@@ -87,7 +87,7 @@ const destroy = () => {
                     <template #icon>
                         <PencilSquare/>
                     </template>
-                    {{ $t('general.edit')}}
+                    {{ $t('e-general.edit')}}
                 </PrimaryButton>
             </Link>
         </template>

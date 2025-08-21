@@ -83,7 +83,7 @@ watch(form, (value) => {
                    target="_blank"
                    class="link ml-xs block font-medium">
                     {{
-                        billingConfigs.plans_page_url_title ? billingConfigs.plans_page_url_title : $t('general.learn_more')
+                        billingConfigs.plans_page_url_title ? billingConfigs.plans_page_url_title : $t('e-general.learn_more')
                     }} </a>
             </template>
 

@@ -119,12 +119,12 @@ const save = () => {
 
         <HorizontalGroup class="mt-lg">
             <template #title>
-                {{ $t('general.status') }}
+                {{ $t('e-general.status') }}
             </template>
 
             <Flex :responsive="false" class="items-center">
                 <Checkbox v-model:checked="form.active" id="active"/>
-                <Label for="active" class="mb-0!">{{ $t('general.active') }}</Label>
+                <Label for="active" class="mb-0!">{{ $t('e-general.active') }}</Label>
             </Flex>
 
             <template #footer>
@@ -132,6 +132,6 @@ const save = () => {
             </template>
         </HorizontalGroup>
 
-        <PrimaryButton @click="save" class="mt-lg">{{ $t('general.save') }}</PrimaryButton>
+        <PrimaryButton @click="save" class="mt-lg">{{ $t('e-general.save') }}</PrimaryButton>
     </Panel>
 </template>

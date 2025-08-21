@@ -97,7 +97,7 @@ const buttonLabel = computed(() => {
         return $t('subscription.change_plan');
     }
 
-    return $t('general.subscribe');
+    return $t('e-general.subscribe');
 })
 
 const newSubscriptionIsLoading = ref(false);
@@ -193,7 +193,7 @@ const title = () => {
         return $t('subscription.change_sub_plan');
     }
 
-    return $t('general.subscribe');
+    return $t('e-general.subscribe');
 }
 </script>
 <template>
@@ -269,7 +269,7 @@ const title = () => {
         </template>
 
         <template #footer>
-            <SecondaryButton @click="closePaymentDetailsModal">{{ $t('general.cancel') }}</SecondaryButton>
+            <SecondaryButton @click="closePaymentDetailsModal">{{ $t('e-general.cancel') }}</SecondaryButton>
         </template>
     </DialogModal>
 </template>

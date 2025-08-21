@@ -53,10 +53,10 @@ const save = () => {
                     <div class="flex items-center space-x-sm">
                         <label>
                             <Radio v-model:checked="form.allow_register" :value="true"/>
-                            {{ $t('general.yes') }}</label>
+                            {{ $t('e-general.yes') }}</label>
                         <label>
                             <Radio v-model:checked="form.allow_register" :value="false"/>
-                            {{ $t('general.no') }}</label>
+                            {{ $t('e-general.no') }}</label>
                     </div>
                 </HorizontalGroup>
 
@@ -65,10 +65,10 @@ const save = () => {
                     <div class="flex items-center space-x-sm">
                         <label>
                             <Radio v-model:checked="form.email_verification" :value="true"/>
-                            {{ $t('general.yes') }}</label>
+                            {{ $t('e-general.yes') }}</label>
                         <label>
                             <Radio v-model:checked="form.email_verification" :value="false"/>
-                            {{ $t('general.no') }}</label>
+                            {{ $t('e-general.no') }}</label>
                     </div>
                 </HorizontalGroup>
 
@@ -80,10 +80,10 @@ const save = () => {
                     <div class="flex items-center space-x-sm">
                         <label>
                             <Radio v-model:checked="form.delete_unverified_users" :value="true"/>
-                            {{ $t('general.yes') }}</label>
+                            {{ $t('e-general.yes') }}</label>
                         <label>
                             <Radio v-model:checked="form.delete_unverified_users" :value="false"/>
-                            {{ $t('general.no') }}</label>
+                            {{ $t('e-general.no') }}</label>
                     </div>
                 </HorizontalGroup>
 
@@ -95,10 +95,10 @@ const save = () => {
                     <div class="flex items-center space-x-sm">
                         <label>
                             <Radio v-model:checked="form.allow_account_deletion" :value="true"/>
-                            {{ $t('general.yes') }}</label>
+                            {{ $t('e-general.yes') }}</label>
                         <label>
                             <Radio v-model:checked="form.allow_account_deletion" :value="false"/>
-                            {{ $t('general.no') }}</label>
+                            {{ $t('e-general.no') }}</label>
                     </div>
                 </HorizontalGroup>
 
@@ -121,7 +121,7 @@ const save = () => {
                 </HorizontalGroup>
 
                 <PrimaryButton :disabled="form.processing" :isLoading="form.processing" type="submit" class="mt-lg">
-                    {{ $t('general.save') }}
+                    {{ $t('e-general.save') }}
                 </PrimaryButton>
             </Panel>
         </form>

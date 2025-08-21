@@ -43,10 +43,10 @@ const redirectToPortal = () => {
 }
 </script>
 <template>
-    <Head :title="$t('workspace.view_workspace')"/>
+    <Head :title="$t('e-workspace.view_workspace')"/>
 
     <div class="w-full mx-auto row-py">
-        <PageHeader :title="$t('workspace.view_workspace')">
+        <PageHeader :title="$t('e-workspace.view_workspace')">
             <template #description>
                 {{ workspace.name }}
             </template>
@@ -56,14 +56,14 @@ const redirectToPortal = () => {
 
         <div class="row-px">
             <Panel>
-                <template #title>{{ $t('general.details') }}</template>
+                <template #title>{{ $t('e-general.details') }}</template>
 
                 <div class="md:max-w-(--container-2xl)">
                     <Indicators :workspace="workspace" conditionalClass="mb-lg"/>
 
                     <HorizontalGroup>
                         <template #title>
-                            {{ $t('general.name') }}
+                            {{ $t('e-general.name') }}
                         </template>
 
                         <div>{{ workspace.name }}</div>
@@ -71,7 +71,7 @@ const redirectToPortal = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('general.owner') }}
+                            {{ $t('e-general.owner') }}
                         </template>
 
                         <template v-if="workspace.owner">
@@ -84,22 +84,22 @@ const redirectToPortal = () => {
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('general.access_status') }}
+                            {{ $t('e-general.access_status') }}
                         </template>
 
                         <div v-if="workspace.access_status === ACCESS_STATUS_SUBSCRIPTION">
                             {{ $t('subscription.requires_subscription') }}
                         </div>
                         <div v-if="workspace.access_status === ACCESS_STATUS_UNLIMITED">{{
-                                $t('workspace.unlimited')
+                                $t('e-workspace.unlimited')
                             }}
                         </div>
-                        <div v-if="workspace.access_status === ACCESS_STATUS_LOCKED">{{ $t('workspace.locked') }}</div>
+                        <div v-if="workspace.access_status === ACCESS_STATUS_LOCKED">{{ $t('e-workspace.locked') }}</div>
                     </HorizontalGroup>
 
                     <HorizontalGroup class="mt-lg">
                         <template #title>
-                            {{ $t('theme.color') }}
+                            {{ $t('e-theme.color') }}
                         </template>
 
                         <div :style="{'background': workspace.hex_color}"
