@@ -1,0 +1,158 @@
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
+
+    .page {
+        min-height: 100vh;
+        /* full height */
+        display: flex;
+        align-items: center;
+        /* vertical center */
+        justify-content: center;
+        /* horizontal center */
+    }
+
+    .row-px.row-py.container {
+        flex: 1;
+        /* make container stretch */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body {
+        background-color: #EBEBEB;
+        min-height: 100vh;
+    }
+
+    .bg-img {
+        background-image: url("/bg/support-bg.png");
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        background-color: #fff;
+    }
+
+    .color-theme {
+        color: #6B00FD;
+    }
+
+    .support-box {
+        border-radius: 22px;
+        border: 0.609px solid #A665FF;
+        background: linear-gradient(180deg, rgba(107, 0, 253, 0.10) 0%, rgba(64, 0, 151, 0.10) 100%);
+        backdrop-filter: blur(13.2841157913208px);
+        padding: 32px;
+    }
+
+    .m-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .logo {
+        max-width: 195px;
+    }
+</style>
+<section class="bg-white dark:bg-gray-900 bg-img w-full">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mb-8 lg:mb-16 m-auto text-center">
+            <a href="/"><img class="logo mb-[68px] m-auto" src="../img/socialgrubs-text-black.png" alt="whatsapp"></a>
+            <h2 class="text-[46px] tracking-tight font-extrabold text-gray-900 dark:text-white">
+                Need Help/ We're Here For You
+            </h2>
+            <p class="color-theme sm:text-[20px] dark:text-gray-400">
+                Choose the support method that works best for you.
+            </p>
+        </div>
+        <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <div class="border support-box rounded-[20px] text-center">
+                <div class="flex justify-center items-center w-10 h-10 rounded-full lg:h-12 lg:w-12 m-auto">
+                    <img src="../img/whatsapp-icon.png" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="whatsapp">
+                </div>
+                <h3 class="pb-[16px] text-[15px] font-bold dark:text-white">WhatsApp {{$t('general.done')}}</h3>
+                <p class="text-black text-[13px] mb-[16px]">
+                    Chat directly with our support team. Quick replies for your questions.
+                </p>
+                <span
+                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">Start
+                    Chat</span>
+
+            </div>
+            <div class="border support-box rounded-[20px] text-center">
+                <div class="flex justify-center items-center w-10 h-10 rounded-full  lg:h-12 lg:w-12 m-auto ">
+                    <img src="../img/email-icon.png" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="email">
+                </div>
+                <h3 class="mb-[16px] text-[15px] font-bold dark:text-white">Email</h3>
+                <p class="text-black text-[13px] mb-[16px]">
+                    Send us your inquiries or issues anytime we usually reply within 24 hours.
+                </p>
+                <span
+                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">support@socialgrubs.com</span>
+            </div>
+            <div class="border support-box rounded-[20px] text-center">
+                <div class="flex justify-center items-center w-10 h-10 rounded-full  lg:h-12 lg:w-12 m-auto ">
+                    <img src="../img/user-icon.png" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="user guide">
+                </div>
+                <h3 class="mb-[16px] text-[15px] font-bold dark:text-white">User Guide</h3>
+                <p class="text-black  text-[13px] mb-[16px]">
+                    Explore detailed guides and tutorials. Perfect if you like solving things yourself.
+                </p>
+                <a href="docs.socialgrubs.com"
+                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">Visit
+                    the Guide</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+(function () {
+    const currentLocale = 'en-GB';
+    const defaultLocale =  'en-GB';
+    const basePath = '/resources/lang-json/mixpost-pro-team/';
+
+    let translations = {};
+    let fallbackTranslations = {};
+
+    // Load JSON translation file
+    async function loadTranslations(locale) {
+        try {
+            const response = await fetch(`${basePath}${locale}.json`);
+            if (!response.ok) throw new Error(`Missing file for locale: ${locale}`);
+            return await response.json();
+        } catch (e) {
+            console.warn(e.message);
+            return {};
+        }
+    }
+
+    // Simple lookup helper
+    function getNested(obj, path) {
+        return path.split('.').reduce((o, k) => (o ? o[k] : null), obj);
+    }
+
+    // Global translator function
+    window.t = function (key) {
+        let value = getNested(translations, key);
+        if (value) return value;
+
+        value = getNested(fallbackTranslations, key);
+        if (value) return value;
+
+        return key; // fallback to key if missing
+    };
+
+    // Bootstrap
+    Promise.all([
+        loadTranslations(defaultLocale).then(data => fallbackTranslations = data),
+        loadTranslations(currentLocale).then(data => translations = data)
+    ]).then(() => {
+        console.log(`Translations loaded for: ${currentLocale}`);
+    });
+})();
+</script>
