@@ -1,6 +1,6 @@
 <?php
 
-namespace Inovector\Mixpost;
+namespace App\Override\ProTeam;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Arr;
@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Validation\Rule;
 use Inovector\Mixpost\Models\Setting;
+use Inovector\Mixpost\Mixpost;
+use Inovector\Mixpost\Util;
 
-class Settings
+class Settings extends \Inovector\Mixpost\Settings
 {
     protected mixed $config;
 

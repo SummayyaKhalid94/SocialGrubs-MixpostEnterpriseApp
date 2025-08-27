@@ -13,8 +13,7 @@ import LanguageSelectorModal from "@p/Components/User/LanguageSelectorModal.vue"
 const showLanguagePopup = ref(false);
 onMounted(() => {
   const page = usePage();
-  console.log(page.props);
-  if (page.props.settings.show_language_popup) {
+  if (page.props.mixpost.settings.show_language_popup) {
     showLanguagePopup.value = true;
   }
 });
@@ -56,8 +55,8 @@ const { user } = useAuth();
   </div>
   <LanguageSelectorModal
     v-if="$page.props.auth.user && !$page.props.auth.user.is_admin"
-    :locales="$page.props.locales"
-    :current-settings="$page.props.settings"
+    :locales="$page.props.mixpost.locales"
+    :current-settings="$page.props.mixpost.settings"
     :show="showLanguagePopup"
     @close="showLanguagePopup = false"
   />

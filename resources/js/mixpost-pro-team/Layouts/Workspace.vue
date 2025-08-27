@@ -20,7 +20,7 @@ onMounted(() => {
   console.log("Page props");
   console.log(usePage().props);
   const page = usePage();
-  if (page.props.settings.show_language_popup) {
+  if (page.props.mixpost.settings.show_language_popup) {
     showLanguagePopup.value = true;
   }
 });
@@ -43,8 +43,8 @@ context.id = usePage().props.ziggy.workspace_id;
   </DefaultLayout>
 
   <LanguageSelectorModal
-    :locales="$page.props.locales"
-    :current-settings="$page.props.settings"
+    :locales="$page.props.mixpost.locales"
+    :current-settings="$page.props.mixpost.settings"
     :show="showLanguagePopup"
     @close="showLanguagePopup = false"
   />

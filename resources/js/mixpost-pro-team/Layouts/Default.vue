@@ -27,8 +27,8 @@ const { openBroadcast, closeBroadcast } = useBroadcast();
 onMounted(() => {
   openBroadcast();
   const page = usePage();
-  console.log(page.props.settings.show_language_popup);
-  if (page.props.settings.show_language_popup) {
+  console.log(page.props.mixpost.settings.show_language_popup);
+  if (page.props.mixpost.settings.show_language_popup) {
     showLanguagePopup.value = true;
   }
 });
@@ -90,8 +90,8 @@ onUnmounted(() => {
   </div>
 
   <LanguageSelectorModal
-    :locales="$page.props.locales"
-    :current-settings="$page.props.settings"
+    :locales="$page.props.mixpost.locales"
+    :current-settings="$page.props.mixpost.settings"
     :show="showLanguagePopup"
     @close="showLanguagePopup = false"
   />

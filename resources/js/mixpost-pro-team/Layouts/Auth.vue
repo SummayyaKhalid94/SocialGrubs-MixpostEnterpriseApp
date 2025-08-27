@@ -33,11 +33,4 @@ const { user } = useAuth();
 
     <AuthPasswordConfirmation />
   </div>
-  <LanguageSelectorModal
-    v-if="$page.props.auth.user && !$page.props.auth.user.is_admin"
-    :locales="$page.props.locales"
-    :current-settings="$page.props.settings"
-    :show="showLanguagePopup"
-    @close="showLanguagePopup = false"
-  />
 </template>

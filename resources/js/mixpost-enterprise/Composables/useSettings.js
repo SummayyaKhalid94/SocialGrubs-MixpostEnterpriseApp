@@ -14,7 +14,8 @@ const useSettings = () => {
         getSetting,
         timeZone: settings.value.timezone,
         timeFormat: parseInt(settings.value.time_format),
-        weekStartsOn: parseInt(settings.value.week_starts_on)
+        weekStartsOn: parseInt(settings.value.week_starts_on),
+        showLanguagePopup: parseInt(settings.value.show_language_popup)
     }
 }
 

@@ -15,7 +15,7 @@ import { FeedbackFish } from "@feedback-fish/vue";
 const showLanguagePopup = ref(false);
 onMounted(() => {
   const page = usePage();
-  if (page.props.settings.show_language_popup) {
+  if (page.props.mixpost.settings.show_language_popup) {
     showLanguagePopup.value = true;
   }
 
@@ -102,8 +102,8 @@ const routePrefix = inject("routePrefix");
   </div>
   <LanguageSelectorModal
     v-if="$page.props.auth.user && !$page.props.auth.user.is_admin"
-    :locales="$page.props.locales"
-    :current-settings="$page.props.settings"
+    :locales="$page.props.mixpost.locales"
+    :current-settings="$page.props.mixpost.settings"
     :show="showLanguagePopup"
     @close="showLanguagePopup = false"
   />

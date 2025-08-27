@@ -1,3 +1,3 @@
 <div class="row-px row-py container mx-auto">
-    {!! $page->renderBlocks() !!}
+    {!! Blade::render($page->renderBlocks()) !!}
 </div>

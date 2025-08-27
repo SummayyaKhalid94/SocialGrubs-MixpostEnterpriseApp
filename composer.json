@@ -31,8 +31,6 @@
     },
     "autoload": {
         "psr-4": {
-            "Inovector\\Mixpost\\": "app/Override/ProTeam",
-            "Inovector\\MixpostEnterprise\\": "app/Override/Enterprise",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"

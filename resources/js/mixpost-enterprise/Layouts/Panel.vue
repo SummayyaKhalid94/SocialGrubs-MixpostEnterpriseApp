@@ -7,8 +7,8 @@ import { onMounted, ref } from "vue";
 
 onMounted(() => {
   const page = usePage();
-  console.log(page.props.settings.show_language_popup);
-  if (page.props.settings.show_language_popup) {
+  console.log(page.props.mixpost.settings.show_language_popup);
+  if (page.props.mixpost.settings.show_language_popup) {
     showLanguagePopup.value = true;
   }
 
