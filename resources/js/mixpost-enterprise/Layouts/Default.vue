@@ -18,7 +18,7 @@ const removeStartEventListener = router.on("start", () => {
 });
 
 const { bootstrapComplete } = useBootstrap();
-
+console.log("e Default layout");
 onUnmounted(() => {
   removeStartEventListener();
   const page = usePage();

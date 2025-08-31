@@ -56,103 +56,60 @@
         max-width: 195px;
     }
 </style>
-<section class="bg-white dark:bg-gray-900 bg-img w-full">
+<section class="bg-white bg-img w-full">
     <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
         <div class="max-w-screen-md mb-8 lg:mb-16 m-auto text-center">
-            <a href="/"><img class="logo mb-[68px] m-auto" src="../img/socialgrubs-text-black.png" alt="whatsapp"></a>
-            <h2 class="text-[46px] tracking-tight font-extrabold text-gray-900 dark:text-white">
-                Need Help/ We're Here For You
+            <a href="/"><img class="logo mb-[68px] m-auto"
+                    src="{{ (request()->route('lang') ?? app()->getLocale()) === 'ar-SA' ? asset('img/socialgrubs-black-ar.png') : asset('img/socialgrubs-text-black.png')}}"
+                    alt="whatsapp"></a>
+            <h2 class="text-[46px] tracking-tight font-extrabold text-gray-900 ">
+                {{ __('messages.support.title') }}
             </h2>
-            <p class="color-theme sm:text-[20px] dark:text-gray-400">
-                Choose the support method that works best for you.
+            <p class="color-theme sm:text-[20px] ">
+                {{ __('messages.support.sub_title') }}
             </p>
         </div>
         <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
             <div class="border support-box rounded-[20px] text-center">
                 <div class="flex justify-center items-center w-10 h-10 rounded-full lg:h-12 lg:w-12 m-auto">
-                    <img src="../img/whatsapp-icon.png" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="whatsapp">
+                    <img src="{{asset('img/whatsapp-icon.png')}}" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="whatsapp">
                 </div>
-                <h3 class="pb-[16px] text-[15px] font-bold dark:text-white">WhatsApp {{$t('general.done')}}</h3>
+                <h3 class="pb-[16px] text-[15px] font-bold ">{{ __('messages.support.whatsapp') }}</h3>
                 <p class="text-black text-[13px] mb-[16px]">
-                    Chat directly with our support team. Quick replies for your questions.
+                    {{ __('messages.support.whatsapp_desc') }}
                 </p>
-                <span
-                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">Start
-                    Chat</span>
+                <button class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">
+                    {{ __('messages.support.whatsapp_btn') }}
+                </button>
 
             </div>
             <div class="border support-box rounded-[20px] text-center">
                 <div class="flex justify-center items-center w-10 h-10 rounded-full  lg:h-12 lg:w-12 m-auto ">
-                    <img src="../img/email-icon.png" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="email">
+                    <img src="{{asset('img/email-icon.png')}}" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="email">
                 </div>
-                <h3 class="mb-[16px] text-[15px] font-bold dark:text-white">Email</h3>
+                <h3 class="mb-[16px] text-[15px] font-bold ">{{ __('messages.support.email') }}</h3>
                 <p class="text-black text-[13px] mb-[16px]">
-                    Send us your inquiries or issues anytime we usually reply within 24 hours.
+                    {{ __('messages.support.email_desc') }}
                 </p>
-                <span
-                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">support@socialgrubs.com</span>
+                <a href="mailto:support@socialgrubs.com" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">
+                    {{ __('messages.support.email_btn') }}
+                </a>
             </div>
             <div class="border support-box rounded-[20px] text-center">
                 <div class="flex justify-center items-center w-10 h-10 rounded-full  lg:h-12 lg:w-12 m-auto ">
-                    <img src="../img/user-icon.png" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="user guide">
+                    <img src="{{asset('img/user-icon.png')}}" class="w-5 h-5 lg:w-6 lg:h-6 m-auto" alt="user guide">
                 </div>
-                <h3 class="mb-[16px] text-[15px] font-bold dark:text-white">User Guide</h3>
+                <h3 class="mb-[16px] text-[15px] font-bold ">{{ __('messages.support.user_guide') }}</h3>
                 <p class="text-black  text-[13px] mb-[16px]">
-                    Explore detailed guides and tutorials. Perfect if you like solving things yourself.
+                    {{ __('messages.support.user_guide_desc') }}
                 </p>
-                <a href="docs.socialgrubs.com"
-                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">Visit
-                    the Guide</a>
+                <a href="https://docs.socialgrubs.com" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center rounded-full bg-primary-700 px-2 py-1 text-[12px] text-white">
+                    {{ __('messages.support.user_guide_btn') }}
+                </a>
 
             </div>
         </div>
     </div>
 </section>
-
-
-<script>
-(function () {
-    const currentLocale = 'en-GB';
-    const defaultLocale =  'en-GB';
-    const basePath = '/resources/lang-json/mixpost-pro-team/';
-
-    let translations = {};
-    let fallbackTranslations = {};
-
-    // Load JSON translation file
-    async function loadTranslations(locale) {
-        try {
-            const response = await fetch(`${basePath}${locale}.json`);
-            if (!response.ok) throw new Error(`Missing file for locale: ${locale}`);
-            return await response.json();
-        } catch (e) {
-            console.warn(e.message);
-            return {};
-        }
-    }
-
-    // Simple lookup helper
-    function getNested(obj, path) {
-        return path.split('.').reduce((o, k) => (o ? o[k] : null), obj);
-    }
-
-    // Global translator function
-    window.t = function (key) {
-        let value = getNested(translations, key);
-        if (value) return value;
-
-        value = getNested(fallbackTranslations, key);
-        if (value) return value;
-
-        return key; // fallback to key if missing
-    };
-
-    // Bootstrap
-    Promise.all([
-        loadTranslations(defaultLocale).then(data => fallbackTranslations = data),
-        loadTranslations(currentLocale).then(data => translations = data)
-    ]).then(() => {
-        console.log(`Translations loaded for: ${currentLocale}`);
-    });
-})();
-</script>

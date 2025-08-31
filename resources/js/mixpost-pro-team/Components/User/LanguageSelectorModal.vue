@@ -39,7 +39,7 @@ const getLocaleDirection = (locale) => {
     return props.locales.find((item) => item.long === locale).direction || 'ltr';
 }
 
-const save = () => {
+const saveLangSettings = () => {
   form.put(route("mixpost.profile.updatePreferences"), {
     preserveScroll: true,
     onSuccess() {
@@ -80,7 +80,7 @@ const save = () => {
         </div>
       </HorizontalGroup>
 
-      <PrimaryButton class="mt-4" @click="save">
+      <PrimaryButton class="mt-4" @click="saveLangSettings">
         {{ $t("general.save") }}
       </PrimaryButton>
     </div>

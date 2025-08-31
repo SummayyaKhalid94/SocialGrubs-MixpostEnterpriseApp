@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from "@inertiajs/vue3";
-import { inject, onMounted, ref } from "vue";
+import { inject, ref, onMounted } from "vue";
 import useBootstrap from "../Composables/useBootstrap";
 import useAuth from "../Composables/useAuth";
 import Logo from "@e/Components/DataDisplay/Logo.vue";
@@ -15,37 +15,43 @@ import { FeedbackFish } from "@feedback-fish/vue";
 const showLanguagePopup = ref(false);
 onMounted(() => {
   const page = usePage();
-  if (page.props.mixpost.settings.show_language_popup) {
-    showLanguagePopup.value = true;
+
+console.log(page.props);
+  if (page.props.auth.user && !page.props.auth.user.is_admin) {
+    if (page.props.settings.show_language_popup) {
+      showLanguagePopup.value = true;
+    }
+
+    const BASE_URL = "https://bc.c3mailime.com";
+    const script = document.createElement("script");
+    script.src = BASE_URL + "/packs/js/sdk.js";
+    script.defer = true;
+    script.async = true;
+
+    script.onload = function () {
+      window.C3SDK.run({
+        websiteToken: "phnUt6Fb2avKFRS4ypYnpSnv",
+        baseUrl: BASE_URL,
+      });
+    };
+
+    if (!document.querySelector("#feedback-fish")) {
+      const script2 = document.createElement("script");
+      script2.src = "https://feedback.fish/ff.js?pid=9fd2dc25550ed0";
+      script2.defer = true;
+      script2.id = "feedback-fish";
+      document.body.appendChild(script2);
+    }
+
+    document.body.appendChild(script);
   }
-
-  const BASE_URL = "https://bc.c3mailime.com";
-  const script = document.createElement("script");
-  script.src = BASE_URL + "/packs/js/sdk.js";
-  script.defer = true;
-  script.async = true;
-
-  script.onload = function () {
-    window.C3SDK.run({
-      websiteToken: "phnUt6Fb2avKFRS4ypYnpSnv",
-      baseUrl: BASE_URL,
-    });
-  };
-
-  if (!document.querySelector("#feedback-fish")) {
-    const script2 = document.createElement("script");
-    script2.src = "https://feedback.fish/ff.js?pid=f891131ed03da6";
-    script2.defer = true;
-    script2.id = "feedback-fish";
-    document.body.appendChild(script2);
-  }
-
-  document.body.appendChild(script);
 });
 
 const { bootstrapComplete } = useBootstrap();
 const { user } = useAuth();
 const routePrefix = inject("routePrefix");
+
+console.log("e Minimal layout");
 </script>
 <style>
 .btn-feedback-fish {
@@ -94,7 +100,13 @@ const routePrefix = inject("routePrefix");
       </div>
     </template>
 
-    <button class="btn-feedback-fish" data-feedback-fish>Feedback</button>
+    <button
+      v-if="$page.props.auth.user && !$page.props.auth.user.is_admin"
+      class="btn-feedback-fish"
+      data-feedback-fish
+    >
+      Feedback
+    </button>
 
     <Notifications />
     <Confirmation />
@@ -102,8 +114,8 @@ const routePrefix = inject("routePrefix");
   </div>
   <LanguageSelectorModal
     v-if="$page.props.auth.user && !$page.props.auth.user.is_admin"
-    :locales="$page.props.mixpost.locales"
-    :current-settings="$page.props.mixpost.settings"
+    :locales="$page.props.locales"
+    :current-settings="$page.props.settings"
     :show="showLanguagePopup"
     @close="showLanguagePopup = false"
   />

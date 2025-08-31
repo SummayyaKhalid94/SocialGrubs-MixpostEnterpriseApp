@@ -118,6 +118,17 @@ const {isWorkspaceAdminRole, isWorkspaceEditorRole} = useWorkspace();
                         {{ $t('webhook.webhooks') }}
                     </MenuItem>
                 </MenuGroupBody>
+                <MenuDelimiter/>
+                <MenuGroupBody>
+                    <a class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-900"
+                        :href="route('mixpost.pages.show', { slug: 'support', lang: $page.props.mixpost.settings.locale })"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {{ $t("pages.support") }}
+                    </a>
+                </MenuGroupBody>
+
             </template>
         </div>
 

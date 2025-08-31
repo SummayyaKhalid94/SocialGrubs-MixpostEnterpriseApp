@@ -17,6 +17,7 @@ const context = reactive({
 const showLanguagePopup = ref(false);
 
 onMounted(() => {
+  console.log("p Workspace layout");
   console.log("Page props");
   console.log(usePage().props);
   const page = usePage();

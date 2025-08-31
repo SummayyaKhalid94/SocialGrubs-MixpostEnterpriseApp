@@ -17,7 +17,8 @@ Route::name('mixpost.')->group(function () {
 
     Route::prefix(Util::config('public_pages_prefix', ''))
         ->name('pages.')
+        ->middleware('setLocaleFromUrl')
         ->group(function () {
-            Route::get('{slug?}', PagesController::class)->name('show');
+            Route::get('{slug?}/{lang?}', PagesController::class)->name('show');
         });
 });

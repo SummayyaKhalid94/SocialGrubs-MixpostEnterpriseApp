@@ -12,7 +12,9 @@ import LanguageSelectorModal from "@p/Components/User/LanguageSelectorModal.vue"
 
 const showLanguagePopup = ref(false);
 onMounted(() => {
+  console.log("p Minimal layout");
   const page = usePage();
+  console.log(page.props);
   if (page.props.mixpost.settings.show_language_popup) {
     showLanguagePopup.value = true;
   }

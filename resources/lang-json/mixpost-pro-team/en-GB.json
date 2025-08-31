@@ -1496,5 +1496,8 @@
         "status": "Status",
         "unlimited_access": "Unlimited access",
         "view_plan": "View plan"
+    },
+    "pages": {
+        "support": "Support"
     }
 }
